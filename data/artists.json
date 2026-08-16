@@ -1,0 +1,120 @@
+{
+    "artists": [
+        {
+            "id": "buckshot-bourbon",
+            "name": "Buckshot Bourbon",
+            "slug": "buckshot-bourbon",
+            "genre": "Country Rock",
+            "active": true,
+            "sortOrder": 1
+        },
+
+        {
+            "id": "sawyer-kennedy",
+            "name": "Sawyer Kennedy",
+            "slug": "sawyer-kennedy",
+            "genre": "Nashville Country",
+            "active": true,
+            "sortOrder": 2
+        },
+
+        {
+            "id": "fractal-hearts",
+            "name": "Fractal Hearts",
+            "slug": "fractal-hearts",
+            "genre": "Progressive Rock / Space Rock / Alt Rock",
+            "active": true,
+            "sortOrder": 3
+        },
+
+        {
+            "id": "grassroots-rebellion",
+            "name": "Grassroots Rebellion",
+            "slug": "grassroots-rebellion",
+            "genre": "Punk Rock / Alt Rock / Pop Punk",
+            "active": true,
+            "sortOrder": 4
+        },
+
+        {
+            "id": "warpnotix",
+            "name": "Warpnotix",
+            "slug": "warpnotix",
+            "genre": "EDM / Electronic",
+            "active": true,
+            "sortOrder": 5
+        },
+
+        {
+            "id": "sound-shamans",
+            "name": "Sound Shamans",
+            "slug": "sound-shamans",
+            "genre": "Alt Rock / Indie Rock",
+            "active": true,
+            "sortOrder": 6
+        },
+
+        {
+            "id": "immovable-giants",
+            "name": "Immovable Giants",
+            "slug": "immovable-giants",
+            "genre": "Alt Rock / Indie Rock",
+            "active": true,
+            "sortOrder": 7
+        },
+
+        {
+            "id": "jones-beach-boys",
+            "name": "The Jones Beach Boys",
+            "slug": "jones-beach-boys",
+            "genre": "60s Surf Rock",
+            "active": true,
+            "sortOrder": 8
+        },
+
+        {
+            "id": "the-cosmic-run",
+            "name": "The Cosmic Run",
+            "slug": "the-cosmic-run",
+            "genre": "Alt Rock / Indie Rock / Folk Rock",
+            "active": true,
+            "sortOrder": 9
+        },
+
+        {
+            "id": "moonflower-radio",
+            "name": "Moonflower Radio",
+            "slug": "moonflower-radio",
+            "genre": "Alt Rock / Psychedelic Rock",
+            "active": true,
+            "sortOrder": 10
+        },
+
+        {
+            "id": "find-replace",
+            "name": "Find/Replace",
+            "slug": "find-replace",
+            "genre": "Industrial Rock / Nu-Metal / Alt Rock",
+            "active": true,
+            "sortOrder": 11
+        },
+
+        {
+            "id": "immortal-prophets",
+            "name": "Immortal Prophets",
+            "slug": "immortal-prophets",
+            "genre": "Nu-Metal",
+            "active": true,
+            "sortOrder": 12
+        },
+
+        {
+            "id": "firewall-nation",
+            "name": "Firewall Nation",
+            "slug": "firewall-nation",
+            "genre": "Nu-Metal / Rap Rock",
+            "active": true,
+            "sortOrder": 13
+        }
+    ]
+}
