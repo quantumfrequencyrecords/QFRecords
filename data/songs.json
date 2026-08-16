@@ -1,0 +1,11 @@
+{
+    "songs": [
+        {
+            "id": "signal-fire",
+            "artistId": "firewall-nation",
+            "albumId": "static-horizon",
+            "featured": true,
+            "active": true
+        }
+    ]
+}
