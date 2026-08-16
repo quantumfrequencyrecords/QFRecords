@@ -1,0 +1,10 @@
+{
+    "news": [
+        {
+            "id": "firewall-nation-announcement",
+            "artistId": "firewall-nation",
+            "featured": true,
+            "active": true
+        }
+    ]
+}
