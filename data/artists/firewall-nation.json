@@ -1,0 +1,45 @@
+{
+    "id": "firewall-nation",
+
+    "name": "Firewall Nation",
+
+    "slug": "firewall-nation",
+
+    "genre": [
+        "Nu-Metal",
+        "Rap Rock"
+    ],
+
+    "hometown": "Unknown",
+
+    "formed": "2026",
+
+    "status": "Active",
+
+    "shortBio": "Firewall Nation turns distortion, rhythm and confrontation into a collision of Nu-Metal and Rap Rock.",
+
+    "quote": "Protect your mind. Question the signal.",
+
+    "biography": "Firewall Nation was created around the idea that music can become a firewall between the individual and the overwhelming noise of the outside world. Their sound combines aggressive guitars, rhythmic vocal delivery, electronic textures and modern production into a confrontational alternative-rock experience.",
+
+    "social": {
+        "instagram": "#",
+        "youtube": "#",
+        "tiktok": "#",
+        "spotify": "#"
+    },
+
+    "images": {
+        "hero": "../assets/images/artists/firewall-nation.jpg",
+        "profile": "../assets/images/artists/firewall-nation.jpg",
+        "thumbnail": "../assets/images/artists/firewall-nation.jpg"
+    },
+
+    "members": [],
+
+    "albums": [],
+
+    "featured": true,
+
+    "active": true
+}
