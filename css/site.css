@@ -1,0 +1,1623 @@
+/* ============================================================
+   QUANTUM FREQUENCY RECORDS
+   UNIVERSAL SITE SYSTEM
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   GLOBAL VARIABLES
+------------------------------------------------------------ */
+
+:root {
+
+    --qfr-black: #050505;
+
+    --qfr-black-deep: #000000;
+
+    --qfr-white: #ffffff;
+
+    --qfr-text: rgba(255, 255, 255, 0.92);
+
+    --qfr-text-soft: rgba(255, 255, 255, 0.62);
+
+    --qfr-text-muted: rgba(255, 255, 255, 0.38);
+
+    --qfr-line: rgba(255, 255, 255, 0.12);
+
+    --qfr-line-bright: rgba(255, 255, 255, 0.28);
+
+    --qfr-glass:
+        rgba(255, 255, 255, 0.035);
+
+    --qfr-radius: 2px;
+
+    --qfr-page-width: 1400px;
+
+    --qfr-transition:
+        0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+
+/* ------------------------------------------------------------
+   RESET
+------------------------------------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    background:
+        var(--qfr-black-deep);
+
+    color:
+        var(--qfr-white);
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background:
+        var(--qfr-black-deep);
+
+    color:
+        var(--qfr-text);
+
+    font-family:
+        Inter,
+        Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    line-height: 1.5;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+}
+
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font:
+        inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* ------------------------------------------------------------
+   GLOBAL PAGE
+------------------------------------------------------------ */
+
+.qfr-page {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    background:
+        var(--qfr-black-deep);
+
+    overflow: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   UNIVERSAL BACKGROUND
+------------------------------------------------------------ */
+
+.qfr-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(100, 140, 255, 0.035),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(160, 90, 255, 0.03),
+            transparent 40%
+        );
+}
+
+
+/* ------------------------------------------------------------
+   PAGE CONTENT LAYER
+------------------------------------------------------------ */
+
+.qfr-page-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ------------------------------------------------------------
+   UNIVERSAL HEADER
+------------------------------------------------------------ */
+
+.qfr-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(0, 0, 0, 0.42);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    transition:
+        background var(--qfr-transition),
+        border-color var(--qfr-transition),
+        box-shadow var(--qfr-transition);
+}
+
+
+.qfr-header.scrolled {
+
+    background:
+        rgba(0, 0, 0, 0.82);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 10px 40px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* ------------------------------------------------------------
+   HEADER INNER
+------------------------------------------------------------ */
+
+.qfr-header-inner {
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--qfr-page-width)
+        );
+
+    min-height: 78px;
+
+    margin:
+        0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+/* ------------------------------------------------------------
+   HEADER LOGO
+------------------------------------------------------------ */
+
+.qfr-header-logo {
+
+    width: 125px;
+
+    flex-shrink: 0;
+}
+
+
+.qfr-header-logo img {
+
+    width: 100%;
+
+    height: auto;
+
+    opacity: 0.92;
+
+    transition:
+        opacity var(--qfr-transition),
+        transform var(--qfr-transition);
+}
+
+
+.qfr-header-logo:hover img {
+
+    opacity: 1;
+
+    transform:
+        scale(1.025);
+}
+
+
+/* ------------------------------------------------------------
+   DESKTOP NAVIGATION
+------------------------------------------------------------ */
+
+.qfr-navigation {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap:
+        clamp(
+            16px,
+            2vw,
+            32px
+        );
+}
+
+
+.qfr-navigation a {
+
+    position: relative;
+
+    padding:
+        8px 0;
+
+    color:
+        var(--qfr-text-soft);
+
+    font-size:
+        0.67rem;
+
+    font-weight: 500;
+
+    letter-spacing:
+        0.17em;
+
+    text-transform:
+        uppercase;
+
+    white-space:
+        nowrap;
+
+    transition:
+        color var(--qfr-transition);
+}
+
+
+.qfr-navigation a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--qfr-white);
+
+    transition:
+        width var(--qfr-transition);
+}
+
+
+.qfr-navigation a:hover {
+
+    color:
+        var(--qfr-white);
+}
+
+
+.qfr-navigation a:hover::after {
+
+    width: 100%;
+}
+
+
+.qfr-navigation a.active {
+
+    color:
+        var(--qfr-white);
+}
+
+
+.qfr-navigation a.active::after {
+
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------
+   STORE
+------------------------------------------------------------ */
+
+.qfr-store {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.qfr-store a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 104px;
+
+    padding:
+        10px 18px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.22);
+
+    color:
+        var(--qfr-white);
+
+    font-size:
+        0.65rem;
+
+    letter-spacing:
+        0.18em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        background var(--qfr-transition),
+        border-color var(--qfr-transition),
+        transform var(--qfr-transition);
+}
+
+
+.qfr-store a:hover {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.55);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE MENU BUTTON
+------------------------------------------------------------ */
+
+.qfr-menu-button {
+
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    margin-left: auto;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    color:
+        var(--qfr-white);
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.qfr-menu-button span {
+
+    display: block;
+
+    width: 18px;
+
+    height: 1px;
+
+    background:
+        var(--qfr-white);
+
+    transition:
+        transform var(--qfr-transition),
+        opacity var(--qfr-transition);
+}
+
+
+.qfr-menu-button.open span:nth-child(1) {
+
+    transform:
+        translateY(6px)
+        rotate(45deg);
+}
+
+
+.qfr-menu-button.open span:nth-child(2) {
+
+    opacity: 0;
+}
+
+
+.qfr-menu-button.open span:nth-child(3) {
+
+    transform:
+        translateY(-6px)
+        rotate(-45deg);
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE NAVIGATION
+------------------------------------------------------------ */
+
+.qfr-mobile-navigation {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 78px 0 0 0;
+
+    z-index: 999;
+
+    padding:
+        30px 24px 40px;
+
+    background:
+        rgba(0, 0, 0, 0.96);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    overflow-y: auto;
+}
+
+
+.qfr-mobile-navigation.open {
+
+    display: block;
+
+    animation:
+        mobileMenuIn
+        0.4s ease forwards;
+}
+
+
+@keyframes mobileMenuIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+.qfr-mobile-navigation nav {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.qfr-mobile-navigation a {
+
+    padding:
+        19px 0;
+
+    border-bottom:
+        1px solid
+        var(--qfr-line);
+
+    color:
+        var(--qfr-text-soft);
+
+    font-size:
+        0.78rem;
+
+    letter-spacing:
+        0.2em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        color var(--qfr-transition),
+        padding-left var(--qfr-transition);
+}
+
+
+.qfr-mobile-navigation a:hover {
+
+    color:
+        var(--qfr-white);
+
+    padding-left:
+        8px;
+}
+
+
+.qfr-mobile-store {
+
+    margin-top: 30px;
+
+    display: block;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        var(--qfr-line-bright);
+
+    text-align: center;
+
+    color:
+        var(--qfr-white);
+
+    font-size:
+        0.7rem;
+
+    letter-spacing:
+        0.2em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* ------------------------------------------------------------
+   PAGE HERO
+------------------------------------------------------------ */
+
+.qfr-page-hero {
+
+    position: relative;
+
+    min-height:
+        min(
+            72vh,
+            700px
+        );
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding:
+        170px 24px 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,255,255,0.07),
+            transparent 45%
+        );
+}
+
+
+.qfr-page-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.5)
+        );
+}
+
+
+.qfr-page-hero-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            100%,
+            var(--qfr-page-width)
+        );
+
+    margin:
+        0 auto;
+}
+
+
+.qfr-page-kicker {
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--qfr-text-muted);
+
+    font-size:
+        0.65rem;
+
+    letter-spacing:
+        0.35em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.qfr-page-title {
+
+    max-width:
+        1000px;
+
+    font-size:
+        clamp(
+            3rem,
+            8vw,
+            8rem
+        );
+
+    font-weight:
+        300;
+
+    line-height:
+        0.9;
+
+    letter-spacing:
+        -0.05em;
+}
+
+
+.qfr-page-description {
+
+    max-width:
+        650px;
+
+    margin-top:
+        30px;
+
+    color:
+        var(--qfr-text-soft);
+
+    font-size:
+        clamp(
+            0.9rem,
+            1.5vw,
+            1.1rem
+        );
+
+    line-height:
+        1.8;
+}
+
+
+/* ------------------------------------------------------------
+   CONTENT CONTAINER
+------------------------------------------------------------ */
+
+.qfr-container {
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--qfr-page-width)
+        );
+
+    margin:
+        0 auto;
+}
+
+
+.qfr-section {
+
+    position: relative;
+
+    padding:
+        110px 0;
+}
+
+
+.qfr-section-small {
+
+    padding:
+        70px 0;
+}
+
+
+/* ------------------------------------------------------------
+   SECTION HEADING
+------------------------------------------------------------ */
+
+.qfr-section-heading {
+
+    margin-bottom:
+        48px;
+}
+
+
+.qfr-section-kicker {
+
+    margin-bottom:
+        13px;
+
+    color:
+        var(--qfr-text-muted);
+
+    font-size:
+        0.6rem;
+
+    letter-spacing:
+        0.32em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.qfr-section-title {
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            4rem
+        );
+
+    font-weight:
+        300;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.035em;
+}
+
+
+/* ------------------------------------------------------------
+   SOUND WAVE DIVIDER
+------------------------------------------------------------ */
+
+.qfr-wave-divider {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 90px;
+
+    overflow: hidden;
+
+    opacity: 0.55;
+}
+
+
+.qfr-wave-divider::before,
+.qfr-wave-divider::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+
+    width: 110%;
+
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 12px,
+            rgba(255,255,255,0.18) 13px,
+            transparent 14px
+        );
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black,
+            transparent
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black,
+            transparent
+        );
+}
+
+
+.qfr-wave-divider::before {
+
+    top: 10px;
+
+    transform:
+        scaleY(0.7);
+
+    animation:
+        waveMove 9s linear infinite;
+}
+
+
+.qfr-wave-divider::after {
+
+    top: 35px;
+
+    transform:
+        scaleY(0.45);
+
+    opacity: 0.55;
+
+    animation:
+        waveMove 13s linear infinite reverse;
+}
+
+
+@keyframes waveMove {
+
+    from {
+        transform:
+            translateX(0)
+            scaleY(0.7);
+    }
+
+    to {
+        transform:
+            translateX(-80px)
+            scaleY(0.7);
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   GLASS CARD
+------------------------------------------------------------ */
+
+.qfr-card {
+
+    background:
+        var(--qfr-glass);
+
+    border:
+        1px solid
+        var(--qfr-line);
+
+    transition:
+        transform var(--qfr-transition),
+        border-color var(--qfr-transition),
+        background var(--qfr-transition);
+}
+
+
+.qfr-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(255,255,255,0.055);
+
+    border-color:
+        var(--qfr-line-bright);
+}
+
+
+/* ------------------------------------------------------------
+   BUTTON
+------------------------------------------------------------ */
+
+.qfr-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding:
+        0 24px;
+
+    border:
+        1px solid
+        var(--qfr-line-bright);
+
+    background:
+        transparent;
+
+    color:
+        var(--qfr-white);
+
+    font-size:
+        0.65rem;
+
+    letter-spacing:
+        0.2em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        background var(--qfr-transition),
+        border-color var(--qfr-transition),
+        transform var(--qfr-transition);
+}
+
+
+.qfr-button:hover {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-color:
+        rgba(255,255,255,0.6);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------ */
+
+.qfr-footer {
+
+    position: relative;
+
+    z-index: 5;
+
+    border-top:
+        1px solid
+        var(--qfr-line);
+
+    background:
+        #020202;
+
+    padding:
+        80px 0 30px;
+}
+
+
+.qfr-footer-grid {
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--qfr-page-width)
+        );
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1.5fr;
+
+    gap:
+        50px;
+}
+
+
+.qfr-footer-brand {
+
+    max-width:
+        330px;
+}
+
+
+.qfr-footer-logo {
+
+    width:
+        150px;
+
+    margin-bottom:
+        24px;
+}
+
+
+.qfr-footer-description {
+
+    color:
+        var(--qfr-text-muted);
+
+    font-size:
+        0.8rem;
+
+    line-height:
+        1.8;
+}
+
+
+.qfr-footer-heading {
+
+    margin-bottom:
+        20px;
+
+    color:
+        var(--qfr-white);
+
+    font-size:
+        0.62rem;
+
+    letter-spacing:
+        0.25em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.qfr-footer-links {
+
+    list-style:
+        none;
+}
+
+
+.qfr-footer-links li {
+
+    margin-bottom:
+        11px;
+}
+
+
+.qfr-footer-links a {
+
+    color:
+        var(--qfr-text-muted);
+
+    font-size:
+        0.76rem;
+
+    transition:
+        color var(--qfr-transition);
+}
+
+
+.qfr-footer-links a:hover {
+
+    color:
+        var(--qfr-white);
+}
+
+
+/* ------------------------------------------------------------
+   NEWSLETTER
+------------------------------------------------------------ */
+
+.qfr-newsletter {
+
+    max-width:
+        360px;
+}
+
+
+.qfr-newsletter p {
+
+    margin-bottom:
+        20px;
+
+    color:
+        var(--qfr-text-muted);
+
+    font-size:
+        0.78rem;
+
+    line-height:
+        1.7;
+}
+
+
+.qfr-newsletter-form {
+
+    display:
+        flex;
+
+    border:
+        1px solid
+        var(--qfr-line);
+}
+
+
+.qfr-newsletter-form input {
+
+    min-width:
+        0;
+
+    flex:
+        1;
+
+    padding:
+        14px 13px;
+
+    border:
+        0;
+
+    outline:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        var(--qfr-white);
+
+    font-size:
+        0.72rem;
+}
+
+
+.qfr-newsletter-form input::placeholder {
+
+    color:
+        var(--qfr-text-muted);
+}
+
+
+.qfr-newsletter-form button {
+
+    padding:
+        0 15px;
+
+    border:
+        0;
+
+    border-left:
+        1px solid
+        var(--qfr-line);
+
+    background:
+        transparent;
+
+    color:
+        var(--qfr-white);
+
+    font-size:
+        0.62rem;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* ------------------------------------------------------------
+   SOCIAL LINKS
+------------------------------------------------------------ */
+
+.qfr-social-links {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+}
+
+
+.qfr-social-links a {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        var(--qfr-line);
+
+    color:
+        var(--qfr-text-soft);
+
+    font-size:
+        0.58rem;
+
+    transition:
+        color var(--qfr-transition),
+        border-color var(--qfr-transition),
+        background var(--qfr-transition);
+}
+
+
+.qfr-social-links a:hover {
+
+    color:
+        var(--qfr-white);
+
+    border-color:
+        var(--qfr-line-bright);
+
+    background:
+        rgba(255,255,255,0.05);
+}
+
+
+/* ------------------------------------------------------------
+   FOOTER BOTTOM
+------------------------------------------------------------ */
+
+.qfr-footer-bottom {
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--qfr-page-width)
+        );
+
+    margin:
+        65px auto 0;
+
+    padding-top:
+        22px;
+
+    border-top:
+        1px solid
+        var(--qfr-line);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    color:
+        var(--qfr-text-muted);
+
+    font-size:
+        0.62rem;
+}
+
+
+.qfr-footer-legal {
+
+    display:
+        flex;
+
+    gap:
+        20px;
+}
+
+
+.qfr-footer-legal a:hover {
+
+    color:
+        var(--qfr-white);
+}
+
+
+/* ------------------------------------------------------------
+   PAGE FADE-IN
+------------------------------------------------------------ */
+
+.qfr-page-content {
+
+    animation:
+        pageFadeIn
+        0.8s ease forwards;
+}
+
+
+@keyframes pageFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+
+@media (max-width: 1150px) {
+
+    .qfr-navigation {
+
+        gap:
+            14px;
+    }
+
+
+    .qfr-navigation a {
+
+        font-size:
+            0.58rem;
+
+        letter-spacing:
+            0.12em;
+    }
+
+
+    .qfr-header-inner {
+
+        gap:
+            20px;
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    .qfr-navigation,
+    .qfr-store {
+
+        display:
+            none;
+    }
+
+
+    .qfr-menu-button {
+
+        display:
+            flex;
+    }
+
+
+    .qfr-footer-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .qfr-header-inner {
+
+        width:
+            calc(100% - 34px);
+
+        min-height:
+            70px;
+    }
+
+
+    .qfr-header-logo {
+
+        width:
+            108px;
+    }
+
+
+    .qfr-mobile-navigation {
+
+        inset:
+            70px 0 0 0;
+    }
+
+
+    .qfr-container {
+
+        width:
+            calc(100% - 34px);
+    }
+
+
+    .qfr-section {
+
+        padding:
+            75px 0;
+    }
+
+
+    .qfr-page-hero {
+
+        min-height:
+            65vh;
+
+        padding:
+            140px 17px 65px;
+    }
+
+
+    .qfr-page-title {
+
+        font-size:
+            clamp(
+                2.8rem,
+                15vw,
+                5rem
+            );
+    }
+
+
+    .qfr-footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            42px;
+    }
+
+
+    .qfr-footer-bottom {
+
+        width:
+            calc(100% - 34px);
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+
+    .qfr-footer-legal {
+
+        flex-wrap:
+            wrap;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.001ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.001ms !important;
+    }
+
+}
