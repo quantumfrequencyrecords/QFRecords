@@ -1,0 +1,10 @@
+{
+    "albums": [
+        {
+            "id": "static-horizon",
+            "artistId": "firewall-nation",
+            "featured": true,
+            "active": true
+        }
+    ]
+}
