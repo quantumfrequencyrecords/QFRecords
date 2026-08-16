@@ -6,6 +6,7 @@
             "slug": "buckshot-bourbon",
             "genre": "Country Rock",
             "active": true,
+            "featured": false,
             "sortOrder": 1
         },
 
@@ -15,6 +16,7 @@
             "slug": "sawyer-kennedy",
             "genre": "Nashville Country",
             "active": true,
+            "featured": false,
             "sortOrder": 2
         },
 
@@ -24,6 +26,7 @@
             "slug": "fractal-hearts",
             "genre": "Progressive Rock / Space Rock / Alt Rock",
             "active": true,
+            "featured": false,
             "sortOrder": 3
         },
 
@@ -33,6 +36,7 @@
             "slug": "grassroots-rebellion",
             "genre": "Punk Rock / Alt Rock / Pop Punk",
             "active": true,
+            "featured": false,
             "sortOrder": 4
         },
 
@@ -42,6 +46,7 @@
             "slug": "warpnotix",
             "genre": "EDM / Electronic",
             "active": true,
+            "featured": false,
             "sortOrder": 5
         },
 
@@ -51,6 +56,7 @@
             "slug": "sound-shamans",
             "genre": "Alt Rock / Indie Rock",
             "active": true,
+            "featured": false, 
             "sortOrder": 6
         },
 
@@ -60,6 +66,7 @@
             "slug": "immovable-giants",
             "genre": "Alt Rock / Indie Rock",
             "active": true,
+            "featured": false,     
             "sortOrder": 7
         },
 
@@ -69,6 +76,7 @@
             "slug": "jones-beach-boys",
             "genre": "60s Surf Rock",
             "active": true,
+            "featured": false, 
             "sortOrder": 8
         },
 
@@ -78,6 +86,7 @@
             "slug": "the-cosmic-run",
             "genre": "Alt Rock / Indie Rock / Folk Rock",
             "active": true,
+            "featured": false,    
             "sortOrder": 9
         },
 
@@ -87,6 +96,7 @@
             "slug": "moonflower-radio",
             "genre": "Alt Rock / Psychedelic Rock",
             "active": true,
+            "featured": false, 
             "sortOrder": 10
         },
 
@@ -96,6 +106,7 @@
             "slug": "find-replace",
             "genre": "Industrial Rock / Nu-Metal / Alt Rock",
             "active": true,
+            "featured": false,
             "sortOrder": 11
         },
 
@@ -105,6 +116,7 @@
             "slug": "immortal-prophets",
             "genre": "Nu-Metal",
             "active": true,
+            "featured": false,   
             "sortOrder": 12
         },
 
@@ -114,6 +126,7 @@
             "slug": "firewall-nation",
             "genre": "Nu-Metal / Rap Rock",
             "active": true,
+            "featured": true,
             "sortOrder": 13
         }
     ]
