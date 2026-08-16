@@ -1,0 +1,60 @@
+{
+    "label": {
+        "name": "Quantum Frequency Records",
+        "shortName": "QFRecords",
+        "tagline": "Unleash Music's Raw Vibrational Energy",
+        "description": "Quantum Frequency Records is an independent record label built around artists, sounds and stories that refuse to exist inside the expected.",
+        "founded": "2026"
+    },
+
+    "contact": {
+        "email": "contact@quantumfrequencyrecords.com"
+    },
+
+    "social": {
+        "instagram": "#",
+        "youtube": "#",
+        "tiktok": "#",
+        "spotify": "#",
+        "facebook": "#"
+    },
+
+    "navigation": [
+        {
+            "label": "Home",
+            "url": "home.html"
+        },
+        {
+            "label": "News",
+            "url": "news.html"
+        },
+        {
+            "label": "Artists",
+            "url": "artists.html"
+        },
+        {
+            "label": "Music",
+            "url": "music.html"
+        },
+        {
+            "label": "Videos",
+            "url": "videos.html"
+        },
+        {
+            "label": "Gallery",
+            "url": "gallery.html"
+        },
+        {
+            "label": "About Us",
+            "url": "about.html"
+        },
+        {
+            "label": "Contact Us",
+            "url": "contact.html"
+        },
+        {
+            "label": "Store",
+            "url": "store.html"
+        }
+    ]
+}
