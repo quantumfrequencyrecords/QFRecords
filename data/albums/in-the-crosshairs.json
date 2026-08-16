@@ -1,0 +1,24 @@
+{
+    "id": "in-the-crosshairs",
+
+    "title": "In The Crosshairs",
+
+    "artistId": "firewall-nation",
+
+    "artistName": "Firewall Nation",
+
+    "releaseDate": "2026-08-01",
+
+    "type": "album",
+
+    "artwork": "../assets/images/albums/in-the-crosshairs.jpg"
+    "description": "A collision of distorted guitars, rhythmic aggression and electronic atmosphere.",
+
+    "songs": [
+        "manufactured-silence"
+    ],
+
+    "featured": true,
+
+    "active": true
+}
