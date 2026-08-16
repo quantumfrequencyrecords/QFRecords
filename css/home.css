@@ -1,0 +1,1142 @@
+/* ============================================================
+   QUANTUM FREQUENCY RECORDS
+   HOMEPAGE
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   HOMEPAGE HERO
+------------------------------------------------------------ */
+
+.qfr-home-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 35%,
+            rgba(120, 120, 160, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #030303 0%,
+            #090909 50%,
+            #020202 100%
+        );
+}
+
+
+/* Studio atmosphere */
+
+.qfr-home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.85),
+            rgba(0,0,0,0.30),
+            rgba(0,0,0,0.75)
+        );
+
+    z-index: 1;
+}
+
+
+/* Ambient light */
+
+.qfr-home-hero::after {
+    content: "";
+    position: absolute;
+
+    width: 60vw;
+    height: 60vw;
+
+    right: -20vw;
+    top: -20vw;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180,180,220,0.08),
+            transparent 65%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        homeAmbient 12s ease-in-out infinite alternate;
+
+    z-index: 0;
+}
+
+
+@keyframes homeAmbient {
+
+    from {
+        transform: translate3d(-30px, 20px, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(30px, -20px, 0) scale(1.12);
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   HERO STUDIO PLACEHOLDER
+------------------------------------------------------------ */
+
+.qfr-home-hero-image {
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("../assets/images/backgrounds/studio-home.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.32;
+
+    filter:
+        grayscale(100%)
+        contrast(1.1);
+
+    z-index: 0;
+}
+
+
+.qfr-home-hero-image::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            #000000 0%,
+            rgba(0,0,0,0.65) 30%,
+            rgba(0,0,0,0.15) 70%,
+            rgba(0,0,0,0.5) 100%
+        );
+}
+
+
+/* ------------------------------------------------------------
+   HERO CONTENT
+------------------------------------------------------------ */
+
+.qfr-home-hero-content {
+
+    position: relative;
+    z-index: 3;
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--qfr-page-width)
+        );
+
+    margin:
+        0 auto;
+
+    padding:
+        150px 0 95px;
+}
+
+
+.qfr-home-kicker {
+
+    margin-bottom: 20px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.35em;
+
+    text-transform: uppercase;
+}
+
+
+.qfr-home-title {
+
+    max-width: 1000px;
+
+    font-size:
+        clamp(
+            3.5rem,
+            8vw,
+            8.5rem
+        );
+
+    font-weight: 300;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.055em;
+}
+
+
+.qfr-home-intro {
+
+    max-width: 580px;
+
+    margin-top: 32px;
+
+    color:
+        rgba(255,255,255,0.60);
+
+    font-size:
+        clamp(
+            0.85rem,
+            1.4vw,
+            1rem
+        );
+
+    line-height: 1.8;
+}
+
+
+/* ------------------------------------------------------------
+   HERO METADATA
+------------------------------------------------------------ */
+
+.qfr-home-meta {
+
+    margin-top: 38px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.qfr-home-meta span {
+
+    padding:
+        7px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size:
+        0.58rem;
+
+    letter-spacing:
+        0.15em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* ------------------------------------------------------------
+   LATEST GRID
+------------------------------------------------------------ */
+
+.qfr-latest-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.qfr-latest-feature {
+
+    min-height: 480px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.qfr-latest-small {
+
+    min-height: 480px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.qfr-feature-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(0.22,1,0.36,1);
+}
+
+
+.qfr-card:hover .qfr-feature-image {
+
+    transform:
+        scale(1.045);
+}
+
+
+.qfr-feature-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.25) 60%,
+            rgba(0,0,0,0.05)
+        );
+}
+
+
+.qfr-feature-content {
+
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+
+    z-index: 2;
+}
+
+
+.qfr-feature-type {
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+
+.qfr-feature-title {
+
+    font-size:
+        clamp(
+            1.7rem,
+            3vw,
+            3rem
+        );
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+}
+
+
+.qfr-feature-description {
+
+    margin-top: 13px;
+
+    color:
+        rgba(255,255,255,0.60);
+
+    font-size: 0.78rem;
+
+    line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   FEATURE LINK
+------------------------------------------------------------ */
+
+.qfr-feature-link {
+
+    display: inline-flex;
+
+    margin-top: 22px;
+
+    padding-bottom: 6px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.38);
+
+    color:
+        rgba(255,255,255,0.8);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+}
+
+
+/* ------------------------------------------------------------
+   NOW PLAYING UNIVERSE
+------------------------------------------------------------ */
+
+.qfr-now-playing {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.055),
+            transparent 55%
+        );
+}
+
+
+.qfr-now-playing-inner {
+
+    width:
+        min(
+            calc(100% - 48px),
+            var(--qfr-page-width)
+        );
+
+    min-height: 250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+.qfr-now-label {
+
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+
+.qfr-now-track {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.qfr-now-art {
+
+    width: 92px;
+    height: 92px;
+
+    flex-shrink: 0;
+
+    background-image:
+        url("../assets/images/albums/now-playing-placeholder.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+}
+
+
+.qfr-now-information h3 {
+
+    font-size:
+        clamp(
+            1.4rem,
+            2.5vw,
+            2.4rem
+        );
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+.qfr-now-information p {
+
+    margin-top: 8px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.08em;
+}
+
+
+.qfr-player {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.qfr-player-button {
+
+    width: 52px;
+    height: 52px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    background:
+        rgba(255,255,255,0.03);
+
+    color:
+        white;
+
+    border-radius: 50%;
+
+    transition:
+        background var(--qfr-transition),
+        transform var(--qfr-transition);
+}
+
+
+.qfr-player-button:hover {
+
+    background:
+        rgba(255,255,255,0.1);
+
+    transform:
+        scale(1.05);
+}
+
+
+.qfr-player-bars {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    height: 35px;
+}
+
+
+.qfr-player-bars span {
+
+    width: 2px;
+
+    height: 12px;
+
+    background:
+        rgba(255,255,255,0.55);
+
+    animation:
+        playerBar 1.2s ease-in-out infinite alternate;
+}
+
+
+.qfr-player-bars span:nth-child(2) {
+    animation-delay: .1s;
+    height: 23px;
+}
+
+.qfr-player-bars span:nth-child(3) {
+    animation-delay: .2s;
+    height: 16px;
+}
+
+.qfr-player-bars span:nth-child(4) {
+    animation-delay: .3s;
+    height: 29px;
+}
+
+.qfr-player-bars span:nth-child(5) {
+    animation-delay: .4s;
+    height: 18px;
+}
+
+.qfr-player-bars span:nth-child(6) {
+    animation-delay: .5s;
+    height: 25px;
+}
+
+
+@keyframes playerBar {
+
+    from {
+        transform: scaleY(0.5);
+        opacity: .4;
+    }
+
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* ------------------------------------------------------------
+   TRENDING
+------------------------------------------------------------ */
+
+.qfr-trending-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.qfr-trending-card {
+
+    min-height: 350px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.015)
+        );
+}
+
+
+.qfr-trending-number {
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            6rem
+        );
+
+    font-weight: 200;
+
+    line-height: 0.8;
+
+    color:
+        rgba(255,255,255,0.13);
+}
+
+
+.qfr-trending-type {
+
+    color:
+        rgba(255,255,255,0.38);
+
+    font-size:
+        0.58rem;
+
+    letter-spacing:
+        0.25em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.qfr-trending-name {
+
+    margin-top: 10px;
+
+    font-size:
+        clamp(
+            1.3rem,
+            2.5vw,
+            2.2rem
+        );
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+.qfr-trending-stat {
+
+    margin-top: 15px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size:
+        0.7rem;
+}
+
+
+/* ------------------------------------------------------------
+   ARTIST STRIP
+------------------------------------------------------------ */
+
+.qfr-artist-strip {
+
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    padding-bottom: 15px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255,255,255,0.2)
+        transparent;
+}
+
+
+.qfr-artist-item {
+
+    min-width:
+        220px;
+
+    height:
+        300px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+.qfr-artist-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter:
+        grayscale(100%);
+
+    transition:
+        filter 0.6s ease,
+        transform 0.8s ease;
+}
+
+
+.qfr-artist-item:hover
+.qfr-artist-image {
+
+    filter:
+        grayscale(0%);
+
+    transform:
+        scale(1.05);
+}
+
+
+.qfr-artist-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.9),
+            transparent 65%
+        );
+}
+
+
+.qfr-artist-name {
+
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    right: 20px;
+
+    z-index: 2;
+
+    font-size:
+        1.25rem;
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+/* ------------------------------------------------------------
+   VIDEO SPOTLIGHT
+------------------------------------------------------------ */
+
+.qfr-video-feature {
+
+    min-height:
+        560px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        #050505;
+}
+
+
+.qfr-video-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("../assets/images/backgrounds/video-placeholder.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    opacity: 0.42;
+
+    filter:
+        grayscale(100%);
+
+    transition:
+        transform 1s ease;
+}
+
+
+.qfr-video-feature:hover
+.qfr-video-background {
+
+    transform:
+        scale(1.025);
+}
+
+
+.qfr-video-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.25)
+        );
+}
+
+
+.qfr-video-content {
+
+    position: absolute;
+
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+
+    z-index: 2;
+}
+
+
+.qfr-video-play {
+
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,0.25);
+
+    color:
+        white;
+
+    font-size:
+        1rem;
+}
+
+
+.qfr-video-title {
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            5rem
+        );
+
+    font-weight: 300;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* ------------------------------------------------------------
+   HOMEPAGE CTA
+------------------------------------------------------------ */
+
+.qfr-home-cta {
+
+    text-align: center;
+
+    padding:
+        120px 20px;
+}
+
+
+.qfr-home-cta h2 {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto;
+
+    font-size:
+        clamp(
+            2.5rem,
+            6vw,
+            6rem
+        );
+
+    font-weight:
+        300;
+
+    line-height:
+        0.95;
+
+    letter-spacing:
+        -0.045em;
+}
+
+
+.qfr-home-cta p {
+
+    max-width:
+        550px;
+
+    margin:
+        25px auto 32px;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.8;
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+
+    .qfr-latest-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .qfr-latest-feature {
+
+        grid-column:
+            span 2;
+    }
+
+
+    .qfr-trending-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .qfr-now-playing-inner {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            55px 0;
+
+        gap:
+            20px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .qfr-home-hero {
+
+        min-height:
+            85vh;
+    }
+
+
+    .qfr-home-hero-content {
+
+        width:
+            calc(100% - 34px);
+
+        padding:
+            130px 0 70px;
+    }
+
+
+    .qfr-latest-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .qfr-latest-feature {
+
+        grid-column:
+            auto;
+    }
+
+
+    .qfr-latest-feature,
+    .qfr-latest-small {
+
+        min-height:
+            390px;
+    }
+
+
+    .qfr-feature-content {
+
+        left:
+            22px;
+
+        right:
+            22px;
+
+        bottom:
+            22px;
+    }
+
+
+    .qfr-video-feature {
+
+        min-height:
+            430px;
+    }
+
+
+    .qfr-video-content {
+
+        left:
+            24px;
+
+        right:
+            24px;
+
+        bottom:
+            25px;
+    }
+
+
+    .qfr-now-playing-inner {
+
+        width:
+            calc(100% - 34px);
+    }
+
+}
