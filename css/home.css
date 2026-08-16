@@ -848,15 +848,14 @@
 
 .qfr-video-feature {
 
-    min-height:
-        560px;
-
     position: relative;
-
+    display: block;
+    width: 100%;
+    min-height: 560px;
+    margin-top: 30px;
     overflow: hidden;
-
-    background:
-        #050505;
+    background: #050505;
+    isolation: isolate;
 }
 
 
@@ -907,14 +906,12 @@
 
 
 .qfr-video-content {
-
     position: absolute;
-
     left: 40px;
     right: 40px;
     bottom: 40px;
-
-    z-index: 2;
+    z-index: 5;
+    pointer-events: none;
 }
 
 
@@ -1113,11 +1110,13 @@
     }
 
 
-    .qfr-video-feature {
 
-        min-height:
-            430px;
-    }
+
+.qfr-video-feature {
+    min-height: 430px;
+    margin-top: 25px;
+}
+    
 
 
     .qfr-video-content {
