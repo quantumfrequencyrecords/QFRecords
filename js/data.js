@@ -1,19 +1,5 @@
 /* ============================================================
    QFRECORDS DATA ENGINE
-   ============================================================
-
-   This file is the central connection between the website
-   and the JSON data stored in /data/.
-
-   HTML pages should not contain large amounts of music,
-   artist, album, video or news information.
-
-   Instead:
-
-       JSON = Data
-       JavaScript = Logic
-       HTML = Presentation
-
    ============================================================ */
 
 const QFRData = {
@@ -22,7 +8,7 @@ const QFRData = {
 
 
     /* --------------------------------------------------------
-       Load a JSON file
+       BASIC JSON LOADER
     -------------------------------------------------------- */
 
     async load(path) {
@@ -34,19 +20,21 @@ const QFRData = {
 
         try {
 
-            const response = await fetch(path);
+            const response =
+                await fetch(path);
 
 
             if (!response.ok) {
 
                 throw new Error(
-                    `Unable to load ${path}`
+                    `HTTP ${response.status}: ${path}`
                 );
 
             }
 
 
-            const data = await response.json();
+            const data =
+                await response.json();
 
 
             this.cache[path] = data;
@@ -70,7 +58,7 @@ const QFRData = {
 
 
     /* --------------------------------------------------------
-       SITE DATA
+       SITE
     -------------------------------------------------------- */
 
     async site() {
@@ -83,29 +71,21 @@ const QFRData = {
 
 
     /* --------------------------------------------------------
-       ARTIST INDEX
+       ARTISTS
     -------------------------------------------------------- */
 
     async artists() {
 
-        const data = await this.load(
-            "../data/artists.json"
-        );
+        const data =
+            await this.load(
+                "../data/artists.json"
+            );
 
 
-        if (!data) {
-            return [];
-        }
-
-
-        return data.artists || [];
+        return data?.artists || [];
 
     },
 
-
-    /* --------------------------------------------------------
-       INDIVIDUAL ARTIST
-    -------------------------------------------------------- */
 
     async artist(id) {
 
@@ -121,9 +101,73 @@ const QFRData = {
     },
 
 
+    async activeArtists() {
+
+        const artists =
+            await this.artists();
+
+
+        return artists
+
+            .filter(
+                artist =>
+                    artist.active !== false
+            )
+
+            .sort(
+                (a, b) =>
+                    (a.sortOrder || 999)
+                    -
+                    (b.sortOrder || 999)
+            );
+
+    },
+
+
+    async featuredArtists() {
+
+        const artists =
+            await this.activeArtists();
+
+
+        return artists.filter(
+            artist =>
+                artist.featured === true
+        );
+
+    },
+
+
+    async findArtist(id) {
+
+        const artists =
+            await this.artists();
+
+
+        return artists.find(
+            artist =>
+                artist.id === id
+        ) || null;
+
+    },
+
+
     /* --------------------------------------------------------
-       ALBUM
+       ALBUMS
     -------------------------------------------------------- */
+
+    async albums() {
+
+        const data =
+            await this.load(
+                "../data/albums.json"
+            );
+
+
+        return data?.albums || [];
+
+    },
+
 
     async album(id) {
 
@@ -140,8 +184,21 @@ const QFRData = {
 
 
     /* --------------------------------------------------------
-       SONG
+       SONGS
     -------------------------------------------------------- */
+
+    async songs() {
+
+        const data =
+            await this.load(
+                "../data/songs.json"
+            );
+
+
+        return data?.songs || [];
+
+    },
+
 
     async song(id) {
 
@@ -158,8 +215,21 @@ const QFRData = {
 
 
     /* --------------------------------------------------------
-       VIDEO
+       VIDEOS
     -------------------------------------------------------- */
+
+    async videos() {
+
+        const data =
+            await this.load(
+                "../data/videos.json"
+            );
+
+
+        return data?.videos || [];
+
+    },
+
 
     async video(id) {
 
@@ -179,6 +249,19 @@ const QFRData = {
        NEWS
     -------------------------------------------------------- */
 
+    async newsItems() {
+
+        const data =
+            await this.load(
+                "../data/news.json"
+            );
+
+
+        return data?.news || [];
+
+    },
+
+
     async news(id) {
 
         if (!id) {
@@ -194,94 +277,145 @@ const QFRData = {
 
 
     /* --------------------------------------------------------
-       GENERIC COLLECTION LOADER
+       FILTER SONGS BY ARTIST
     -------------------------------------------------------- */
 
-    async collection(folder) {
+    async songsByArtist(artistId) {
 
-        /*
-            GitHub Pages cannot automatically list the files
-            inside a directory.
+        const songs =
+            await this.songs();
 
-            Therefore individual content will eventually be
-            registered through an index file.
 
-            This function is reserved for those collections.
-        */
-
-        return await this.load(
-            `../data/${folder}.json`
+        return songs.filter(
+            song =>
+                song.artistId === artistId &&
+                song.active !== false
         );
 
     },
 
 
     /* --------------------------------------------------------
-       FIND ARTIST IN MASTER INDEX
+       FILTER ALBUMS BY ARTIST
     -------------------------------------------------------- */
 
-    async findArtist(id) {
+    async albumsByArtist(artistId) {
 
-        const artists =
-            await this.artists();
+        const albums =
+            await this.albums();
 
 
-        return artists.find(
-            artist =>
-                artist.id === id
-        ) || null;
+        return albums.filter(
+            album =>
+                album.artistId === artistId &&
+                album.active !== false
+        );
 
     },
 
 
     /* --------------------------------------------------------
-       ACTIVE ARTISTS
+       FILTER VIDEOS BY ARTIST
     -------------------------------------------------------- */
 
-    async activeArtists() {
+    async videosByArtist(artistId) {
 
-        const artists =
-            await this.artists();
+        const videos =
+            await this.videos();
 
 
-        return artists
-            .filter(
-                artist =>
-                    artist.active !== false
-            )
-            .sort(
-                (a, b) =>
-                    (a.sortOrder || 999)
-                    -
-                    (b.sortOrder || 999)
-            );
+        return videos.filter(
+            video =>
+                video.artistId === artistId &&
+                video.active !== false
+        );
 
     },
 
 
     /* --------------------------------------------------------
-       FEATURED ARTISTS
+       FILTER NEWS BY ARTIST
     -------------------------------------------------------- */
 
-    async featuredArtists() {
+    async newsByArtist(artistId) {
 
-        const artists =
-            await this.artists();
+        const news =
+            await this.newsItems();
 
 
-        return artists.filter(
-            artist =>
-                artist.featured === true &&
-                artist.active !== false
+        return news.filter(
+            item =>
+                item.artistId === artistId &&
+                item.active !== false
+        );
+
+    },
+
+
+    /* --------------------------------------------------------
+       FEATURED CONTENT
+    -------------------------------------------------------- */
+
+    async featuredSongs() {
+
+        const songs =
+            await this.songs();
+
+
+        return songs.filter(
+            song =>
+                song.featured === true &&
+                song.active !== false
+        );
+
+    },
+
+
+    async featuredAlbums() {
+
+        const albums =
+            await this.albums();
+
+
+        return albums.filter(
+            album =>
+                album.featured === true &&
+                album.active !== false
+        );
+
+    },
+
+
+    async featuredVideos() {
+
+        const videos =
+            await this.videos();
+
+
+        return videos.filter(
+            video =>
+                video.featured === true &&
+                video.active !== false
+        );
+
+    },
+
+
+    async featuredNews() {
+
+        const news =
+            await this.newsItems();
+
+
+        return news.filter(
+            item =>
+                item.featured === true &&
+                item.active !== false
         );
 
     }
 
 };
 
-
-/* ============================================================
-   GLOBAL HELPER
-   ============================================================ */
 
 window.QFRData = QFRData;
