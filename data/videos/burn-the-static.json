@@ -1,0 +1,21 @@
+{
+    "id": "burn-the-static",
+
+    "title": "Burn the Static",
+
+    "artistId": "firewall-nation",
+
+    "artistName": "Firewall Nation",
+
+    "releaseDate": "2026-08-01",
+
+    "youtubeId": "",
+
+    "thumbnail": "../assets/images/backgrounds/video-placeholder.jpg",
+
+    "description": "Firewall Nation confronts the noise in their latest visual.",
+
+    "featured": true,
+
+    "active": true
+}
