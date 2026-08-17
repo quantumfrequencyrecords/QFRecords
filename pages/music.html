@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Music | Quantum Frequency Records</title>
+
+    <meta
+        name="description"
+        content="Explore music from Quantum Frequency Records."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/music.css"
+    >
+
+</head>
+
+<body class="music-page">
+
+
+<header class="site-header">
+
+    <a
+        href="../index.html"
+        class="site-logo"
+    >
+
+        <img
+            src="../assets/images/qfr-logo.png"
+            alt="Quantum Frequency Records"
+        >
+
+    </a>
+
+
+    <nav class="main-nav">
+
+        <a href="home.html">
+            HOME
+        </a>
+
+        <a href="news.html">
+            NEWS
+        </a>
+
+        <a href="artists.html">
+            ARTISTS
+        </a>
+
+        <a
+            href="music.html"
+            class="active"
+        >
+            MUSIC
+        </a>
+
+        <a href="videos.html">
+            VIDEOS
+        </a>
+
+        <a href="gallery.html">
+            GALLERY
+        </a>
+
+        <a href="about.html">
+            ABOUT US
+        </a>
+
+        <a href="contact.html">
+            CONTACT US
+        </a>
+
+    </nav>
+
+
+    <a
+        href="store.html"
+        class="store-link"
+    >
+        STORE
+    </a>
+
+
+    <button
+        class="mobile-menu-button"
+        aria-label="Open navigation"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+
+<section class="music-hero">
+
+    <div class="music-hero-overlay"></div>
+
+    <div class="music-hero-content">
+
+        <div class="music-eyebrow">
+            QUANTUM FREQUENCY RECORDS
+        </div>
+
+        <h1>
+            THE
+            <span>FREQUENCY.</span>
+        </h1>
+
+        <p>
+            Explore the sounds, stories and vibrations
+            coming from the QFR universe.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<nav class="music-toolbar">
+
+    <button
+        class="music-filter active"
+        data-filter="all"
+    >
+        ALL MUSIC
+    </button>
+
+    <button
+        class="music-filter"
+        data-filter="albums"
+    >
+        ALBUMS
+    </button>
+
+    <button
+        class="music-filter"
+        data-filter="singles"
+    >
+        SINGLES
+    </button>
+
+</nav>
+
+
+
+<main class="music-main">
+
+
+<section class="music-controls">
+
+    <div class="music-search">
+
+        <input
+            type="search"
+            id="musicSearch"
+            placeholder="Search songs, artists or albums..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <div class="music-selects">
+
+        <select id="artistFilter">
+
+            <option value="all">
+                ALL ARTISTS
+            </option>
+
+        </select>
+
+
+        <select id="genreFilter">
+
+            <option value="all">
+                ALL GENRES
+            </option>
+
+        </select>
+
+
+        <select id="albumFilter">
+
+            <option value="all">
+                ALL ALBUMS
+            </option>
+
+        </select>
+
+    </div>
+
+</section>
+
+
+
+<section class="music-results">
+
+    <div class="music-results-header">
+
+        <div>
+
+            <span>
+                QFR MUSIC LIBRARY
+            </span>
+
+            <h2>
+                ALL FREQUENCIES
+            </h2>
+
+        </div>
+
+        <div
+            id="resultCount"
+            class="result-count"
+        >
+            Loading...
+        </div>
+
+    </div>
+
+
+    <div
+        id="musicGrid"
+        class="music-grid"
+    >
+    </div>
+
+
+    <div
+        id="noResults"
+        class="no-results"
+        hidden
+    >
+
+        <h3>
+            NO FREQUENCY FOUND
+        </h3>
+
+        <p>
+            Try another artist, album, genre or search.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- SONG MODAL -->
+
+<div
+    id="songModal"
+    class="qfr-modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-inner">
+
+        <button
+            class="modal-close"
+            id="closeSongModal"
+        >
+            ×
+        </button>
+
+
+        <div class="song-modal-grid">
+
+            <div>
+
+                <img
+                    id="modalArtwork"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+            <div>
+
+                <div class="section-label">
+                    SONG
+                </div>
+
+                <h2 id="modalTitle">
+                </h2>
+
+                <div
+                    id="modalLyrics"
+                    class="lyrics-container"
+                >
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- NOW PLAYING -->
+
+<div
+    id="qfrPlayer"
+    class="qfr-player"
+>
+
+    <div class="player-info">
+
+        <span>
+            NOW PLAYING
+        </span>
+
+        <strong id="playerSong">
+            Nothing playing
+        </strong>
+
+    </div>
+
+
+    <audio
+        id="audioPlayer"
+        controls
+        preload="metadata"
+    ></audio>
+
+</div>
+
+
+
+<footer class="site-footer">
+
+
+    <div class="footer-brand">
+
+        <img
+            src="../assets/images/qfr-logo.png"
+            alt="Quantum Frequency Records"
+        >
+
+        <p>
+            Pushing the boundaries of sound.
+            Elevating artistry. Creating legacy.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            NAVIGATION
+        </h4>
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="news.html">
+            News
+        </a>
+
+        <a href="artists.html">
+            Artists
+        </a>
+
+        <a href="music.html">
+            Music
+        </a>
+
+        <a href="videos.html">
+            Videos
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            CONNECT
+        </h4>
+
+        <a href="#">
+            Instagram
+        </a>
+
+        <a href="#">
+            YouTube
+        </a>
+
+        <a href="#">
+            TikTok
+        </a>
+
+        <a href="#">
+            Facebook
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>
+            LEGAL
+        </h4>
+
+        <a href="#">
+            Privacy Policy
+        </a>
+
+        <a href="#">
+            Terms of Use
+        </a>
+
+        <a href="#">
+            Cookie Policy
+        </a>
+
+    </div>
+
+
+</footer>
+
+
+
+<script src="../assets/js/music.js"></script>
+
+</body>
+
+</html>
