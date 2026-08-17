@@ -1,148 +1,52 @@
 {
   "id": "buckshot-bourbon",
   "name": "Buckshot Bourbon",
-  "tagline": "Whiskey-soaked stories. Wide-open roads. Loud guitars.",
-  "genre": "Country Rock",
-  "location": "Nashville, Tennessee",
-  "formed": "2023",
-
-  "heroImage": "../assets/images/artists/buckshot-bourbon/buckshot-bourbon-hero.jpg",
-  "logo": "../assets/images/artists/buckshot-bourbon/buckshot-bourbon-logo.png",
-
-  "social": {
-    "instagram": "#",
-    "youtube": "#",
-    "spotify": "#",
-    "facebook": "#",
-    "tiktok": "#"
+  "genre": "Modern Country Rock",
+  "hometown": "Long Island, New York",
+  "signedSince": "",
+  "summary": "Four longtime friends from Long Island, New York, blending country soul, hard-rock edges, and honest storytelling.",
+  "quote": "Real music. Real friends. No apologies.",
+  "biography": {
+    "short": "Buckshot Bourbon is Tucker Kennedy's warm voice and easy grin, David Daniels' intensity and grit, Colt McCrae's showman energy, and Jackson Reilly's steady rhythmic engine.",
+    "full": "Buckshot Bourbon is a four-piece modern country rock band from Long Island, New York. Tucker “Tuck” Kennedy and David “Fireball” Daniels grew up three houses apart in Smithtown, New York. They became friends as children and were inspired to learn guitar after attending a live concert at Jones Beach. In middle school they met Colt “Buckshot” McCrae, whose energy and personality quickly made him part of the group. During high school, David noticed freshman Jackson Reilly's natural rhythmic ability and invited him to play with the group. Jackson joined after an unforgettable garage session. The four spent years developing their sound through garage rehearsals, covers, school events, house parties, and eventually Long Island and New York City bar gigs. Their music evolved into a blend of country soul, hard-rock edges, and Long Island storytelling. After building a local following and independently recording and selling original material, Buckshot Bourbon was discovered by a Quantum Frequency Records representative at a packed Huntington, New York bar show. The band subsequently signed with the label."
   },
-
-  "shortBio": "Buckshot Bourbon blends hard-driving country rock with southern storytelling, electric guitars and the unmistakable spirit of the American road.",
-
-  "biography": "Born somewhere between a backroad bar and a midnight highway, Buckshot Bourbon built their sound around the stories that never make it into postcards. Their music combines southern country storytelling with the grit and volume of classic rock. Every song feels like another mile down an open road — sometimes reckless, sometimes reflective, but always loud enough to remember.",
-
   "members": [
     {
-      "name": "Cole Maddox",
-      "role": "Lead Vocals / Rhythm Guitar",
-      "hometown": "Nashville, TN",
-      "image": "../assets/images/artists/buckshot-bourbon/cole-maddox.jpg",
-      "bio": "Cole Maddox is the gravel-voiced frontman of Buckshot Bourbon. His writing draws from southern storytelling, American highways and the characters found in late-night honky-tonks."
+      "id": "tucker-kennedy",
+      "name": "Tucker Kennedy",
+      "nickname": "Tuck",
+      "file": "members/tucker-kennedy.json"
     },
     {
-      "name": "Jack Ransom",
-      "role": "Lead Guitar",
-      "hometown": "Memphis, TN",
-      "image": "../assets/images/artists/buckshot-bourbon/jack-ransom.jpg",
-      "bio": "Jack Ransom brings the electric edge to the band's sound, combining blues-based guitar work with modern country-rock production."
+      "id": "david-daniels",
+      "name": "David Daniels",
+      "nickname": "Fireball",
+      "file": "members/david-daniels.json"
     },
     {
-      "name": "Wade Mercer",
-      "role": "Bass",
-      "hometown": "Franklin, TN",
-      "image": "../assets/images/artists/buckshot-bourbon/wade-mercer.jpg",
-      "bio": "Wade Mercer anchors the band's low end with a powerful combination of country groove and classic rock."
+      "id": "colt-mccrae",
+      "name": "Colt McCrae",
+      "nickname": "Buckshot",
+      "file": "members/colt-mccrae.json"
     },
     {
-      "name": "Eli Boone",
-      "role": "Drums",
-      "hometown": "Murfreesboro, TN",
-      "image": "../assets/images/artists/buckshot-bourbon/eli-boone.jpg",
-      "bio": "Eli Boone's aggressive but controlled drumming gives Buckshot Bourbon the drive that powers their live sound."
+      "id": "jackson-reilly",
+      "name": "Jackson Reilly",
+      "nickname": "Crash",
+      "file": "members/jackson-reilly.json"
     }
   ],
-
-  "releases": [
-    {
-      "title": "Last Call Confessions",
-      "type": "Album",
-      "year": "2026",
-      "artwork": "../assets/images/music/buckshot-bourbon-last-call-confessions.jpg",
-      "description": "A collection of late-night country-rock stories about love, loss, whiskey and second chances.",
-      "songs": [
-        {
-          "title": "Last Call Confessions",
-          "duration": "3:48",
-          "artwork": "../assets/images/music/buckshot-bourbon-last-call-confessions.jpg",
-          "audio": "../assets/audio/buckshot-bourbon/last-call-confessions.mp3",
-          "lyrics": "Lyrics will be loaded here."
-        },
-        {
-          "title": "Whiskey Don't Lie",
-          "duration": "3:32",
-          "artwork": "../assets/images/music/buckshot-bourbon-last-call-confessions.jpg",
-          "audio": "../assets/audio/buckshot-bourbon/whiskey-dont-lie.mp3",
-          "lyrics": "Lyrics will be loaded here."
-        },
-        {
-          "title": "Midnight on I-40",
-          "duration": "4:02",
-          "artwork": "../assets/images/music/buckshot-bourbon-last-call-confessions.jpg",
-          "audio": "../assets/audio/buckshot-bourbon-last-call-confessions.mp3",
-          "lyrics": "Lyrics will be loaded here."
-        }
-      ]
-    },
-    {
-      "title": "Open Road",
-      "type": "Album",
-      "year": "2025",
-      "artwork": "../assets/images/music/buckshot-bourbon-open-road.jpg",
-      "description": "The debut album from Buckshot Bourbon.",
-      "songs": [
-        {
-          "title": "Open Road",
-          "duration": "3:41",
-          "artwork": "../assets/images/music/buckshot-bourbon-open-road.jpg",
-          "audio": "../assets/audio/buckshot-bourbon/open-road.mp3",
-          "lyrics": "Lyrics will be loaded here."
-        },
-        {
-          "title": "Neon & Dust",
-          "duration": "3:56",
-          "artwork": "../assets/images/music/buckshot-bourbon-open-road.jpg",
-          "audio": "../assets/audio/buckshot-bourbon/neon-and-dust.mp3",
-          "lyrics": "Lyrics will be loaded here."
-        }
-      ]
+  "socials": {},
+  "releases": [],
+  "videos": [],
+  "gallery": {
+    "fullBand": [],
+    "livePerformances": [],
+    "members": {
+      "tucker-kennedy": [],
+      "david-daniels": [],
+      "colt-mccrae": [],
+      "jackson-reilly": []
     }
-  ],
-
-  "videos": [
-    {
-      "title": "Last Call Confessions — Official Video",
-      "youtubeId": "VIDEO_ID_HERE",
-      "thumbnail": "../assets/images/videos/buckshot-bourbon-last-call.jpg"
-    },
-    {
-      "title": "Open Road — Official Video",
-      "youtubeId": "VIDEO_ID_HERE",
-      "thumbnail": "../assets/images/videos/buckshot-bourbon-open-road.jpg"
-    }
-  ],
-
-  "gallery": [
-    {
-      "title": "Live Performances",
-      "items": [
-        {
-          "title": "Nashville — August 2026",
-          "image": "../assets/images/gallery/buckshot-bourbon/nashville-01.jpg"
-        },
-        {
-          "title": "Nashville — August 2026",
-          "image": "../assets/images/gallery/buckshot-bourbon/nashville-02.jpg"
-        }
-      ]
-    },
-    {
-      "title": "Behind The Scenes",
-      "items": [
-        {
-          "title": "Studio Sessions",
-          "image": "../assets/images/gallery/buckshot-bourbon/studio-01.jpg"
-        }
-      ]
-    }
-  ]
+  }
 }
