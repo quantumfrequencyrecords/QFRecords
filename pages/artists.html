@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Artists | Quantum Frequency Records</title>
+
+    <meta
+        name="description"
+        content="Meet the artists of Quantum Frequency Records."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/artists.css"
+    >
+
+</head>
+
+
+<body class="artists-page">
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="qfr-header">
+
+    <div class="qfr-header-inner">
+
+        <a
+            href="home.html"
+            class="qfr-logo-link"
+        >
+
+            <img
+                src="../assets/images/qfr-logo.png"
+                alt="Quantum Frequency Records"
+                class="qfr-header-logo"
+            >
+
+        </a>
+
+
+        <button
+            class="qfr-menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav
+            class="qfr-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a
+                href="artists.html"
+                class="active"
+            >
+                Artists
+            </a>
+
+            <a href="music.html">
+                Music
+            </a>
+
+            <a href="videos.html">
+                Videos
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a
+                href="store.html"
+                class="store-link"
+            >
+                Store
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     ARTIST SYMBOL MARQUEE
+     ========================================================= -->
+
+<section
+    class="artist-symbol-banner"
+    aria-label="Quantum Frequency Records artists"
+>
+
+    <button
+        class="artist-marquee-arrow artist-marquee-prev"
+        type="button"
+        aria-label="Previous artists"
+    >
+        ‹
+    </button>
+
+
+    <div
+        class="artist-marquee-viewport"
+        data-artist-marquee
+    >
+
+        <div
+            class="artist-marquee-track"
+            data-artist-marquee-track
+        >
+
+            <div
+                class="artist-marquee-group"
+                data-marquee-group
+            ></div>
+
+            <div
+                class="artist-marquee-group"
+                data-marquee-group
+                aria-hidden="true"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="artist-marquee-arrow artist-marquee-next"
+        type="button"
+        aria-label="Next artists"
+    >
+        ›
+    </button>
+
+</section>
+
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="artists-hero">
+
+    <div class="artists-hero-particles"></div>
+
+    <div class="artists-hero-content">
+
+        <p class="qfr-eyebrow">
+            QUANTUM FREQUENCY RECORDS
+        </p>
+
+
+        <h1>
+            OUR ARTISTS.
+            OUR
+            <span>FREQUENCY.</span>
+        </h1>
+
+
+        <p class="artists-hero-description">
+            A diverse roster of independent artists
+            creating the future of sound.
+        </p>
+
+    </div>
+
+
+    <!-- waveform -->
+
+    <div
+        class="artists-waveform"
+        aria-hidden="true"
+    >
+
+        <svg
+            viewBox="0 0 1600 160"
+            preserveAspectRatio="none"
+        >
+
+            <path
+                d="M0 80
+                   C20 80 20 78 40 80
+                   S60 86 80 80
+                   S100 70 120 80
+                   S140 94 160 80
+                   S180 66 200 80
+                   S220 90 240 80
+                   S260 50 280 80
+                   S300 105 320 80
+                   S340 58 360 80
+                   S380 95 400 80
+                   S420 65 440 80
+                   S460 105 480 80
+                   S500 55 520 80
+                   S540 95 560 80
+                   S580 60 600 80
+                   S620 110 640 80
+                   S660 50 680 80
+                   S700 100 720 80
+                   S740 62 760 80
+                   S780 100 800 80
+                   S820 45 840 80
+                   S860 105 880 80
+                   S900 55 920 80
+                   S940 100 960 80
+                   S980 60 1000 80
+                   S1020 110 1040 80
+                   S1060 50 1080 80
+                   S1100 95 1120 80
+                   S1140 65 1160 80
+                   S1180 105 1200 80
+                   S1220 55 1240 80
+                   S1260 95 1280 80
+                   S1300 60 1320 80
+                   S1340 100 1360 80
+                   S1380 55 1400 80
+                   S1420 95 1440 80
+                   S1460 60 1480 80
+                   S1500 100 1520 80
+                   S1540 65 1560 80
+                   S1580 80 1600 80"
+            />
+
+        </svg>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FILTER / SEARCH
+     ========================================================= -->
+
+<section class="artists-controls">
+
+    <div class="artists-filter">
+
+        <label for="genre-filter">
+            FILTER BY GENRE
+        </label>
+
+
+        <select id="genre-filter">
+
+            <option value="all">
+                ALL GENRES
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="artists-search">
+
+        <input
+            type="search"
+            id="artist-search"
+            placeholder="Search artists..."
+            autocomplete="off"
+        >
+
+        <span>
+            ⌕
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ARTIST ROSTER
+     ========================================================= -->
+
+<section
+    class="artists-roster"
+    id="artist-list"
+>
+
+    <div
+        class="artists-loading"
+        data-artists-loading
+    >
+
+        <div class="artists-loader"></div>
+
+        <p>
+            Tuning into the roster...
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DISCOVER CTA
+     ========================================================= -->
+
+<section class="artists-discover">
+
+    <div class="artists-discover-background"></div>
+
+    <div class="artists-discover-content">
+
+        <p class="qfr-eyebrow">
+            KEEP EXPLORING
+        </p>
+
+
+        <h2>
+            DISCOVER MORE.
+            <br>
+            FEEL MORE.
+        </h2>
+
+
+        <a
+            href="music.html"
+            class="qfr-button"
+        >
+            Explore Music
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="qfr-footer">
+
+    <div class="qfr-footer-inner">
+
+
+        <div class="qfr-footer-brand">
+
+            <img
+                src="../assets/images/qfr-logo.png"
+                alt="Quantum Frequency Records"
+                class="qfr-footer-logo"
+            >
+
+            <p>
+                Pushing the boundaries of sound.
+                <br>
+                Elevating artistry. Creating legacy.
+            </p>
+
+        </div>
+
+
+        <div class="qfr-footer-column">
+
+            <h3>
+                Navigation
+            </h3>
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="news.html">
+                News
+            </a>
+
+            <a href="artists.html">
+                Artists
+            </a>
+
+            <a href="music.html">
+                Music
+            </a>
+
+            <a href="videos.html">
+                Videos
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+
+        <div class="qfr-footer-column">
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#">
+                FAQ
+            </a>
+
+            <a href="#">
+                Shipping & Returns
+            </a>
+
+            <a href="#">
+                Licensing
+            </a>
+
+            <a href="#">
+                Submissions
+            </a>
+
+            <a href="#">
+                Press Kit
+            </a>
+
+        </div>
+
+
+        <div class="qfr-footer-column">
+
+            <h3>
+                Connect
+            </h3>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+            <a href="#">
+                YouTube
+            </a>
+
+            <a href="#">
+                Spotify
+            </a>
+
+        </div>
+
+
+        <div class="qfr-footer-column">
+
+            <h3>
+                Legal
+            </h3>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms of Use
+            </a>
+
+            <a href="#">
+                Cookie Policy
+            </a>
+
+            <a href="#">
+                Return Policy
+            </a>
+
+        </div>
+
+
+        <div class="qfr-footer-column">
+
+            <h3>
+                Store
+            </h3>
+
+            <a href="store.html">
+                Shop All
+            </a>
+
+            <a href="store.html">
+                New Arrivals
+            </a>
+
+            <a href="store.html">
+                Vinyl
+            </a>
+
+            <a href="store.html">
+                Apparel
+            </a>
+
+            <a href="store.html">
+                Accessories
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="qfr-footer-bottom">
+
+        <p>
+            © 2026 Quantum Frequency Records.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="../js/site.js"></script>
+
+<script src="../js/data.js"></script>
+
+<script src="../js/artists.js"></script>
+
+</body>
+
+</html>
