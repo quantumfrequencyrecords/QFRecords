@@ -1,0 +1,34 @@
+{
+    "id": "buckshot-bourbon",
+    "name": "Buckshot Bourbon",
+    "slug": "buckshot-bourbon",
+
+    "genre": "Country Rock",
+
+    "hometown": "Nashville, TN",
+
+    "signedSince": "2026",
+
+    "membersCount": 5,
+
+    "shortBio": "Raw stories. Real whiskey. Country music with an edge and a heartbeat.",
+
+    "image": "../assets/images/artists/buckshot-bourbon.jpg",
+
+    "latestRelease": {
+        "title": "Last Call Confessions",
+        "date": "August 2026",
+        "image": "../assets/images/releases/buckshot-bourbon-last-call.jpg"
+    },
+
+    "social": {
+        "instagram": "#",
+        "youtube": "#",
+        "spotify": "#",
+        "tiktok": "#"
+    },
+
+    "active": true,
+
+    "sortOrder": 1
+}
