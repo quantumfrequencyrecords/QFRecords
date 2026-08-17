@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gallery | Quantum Frequency Records</title>
+
+    <meta
+        name="description"
+        content="Explore the Quantum Frequency Records visual archive."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/gallery.css"
+    >
+
+</head>
+
+
+<body class="gallery-page">
+
+
+<header class="site-header">
+
+    <a
+        href="../index.html"
+        class="site-logo"
+    >
+
+        <img
+            src="../assets/images/qfr-logo.png"
+            alt="Quantum Frequency Records"
+        >
+
+    </a>
+
+
+    <nav class="main-nav">
+
+        <a href="home.html">HOME</a>
+
+        <a href="news.html">NEWS</a>
+
+        <a href="artists.html">ARTISTS</a>
+
+        <a href="music.html">MUSIC</a>
+
+        <a href="videos.html">VIDEOS</a>
+
+        <a
+            href="gallery.html"
+            class="active"
+        >
+            GALLERY
+        </a>
+
+        <a href="about.html">ABOUT US</a>
+
+        <a href="contact.html">CONTACT US</a>
+
+    </nav>
+
+
+    <a
+        href="store.html"
+        class="store-link"
+    >
+        STORE
+    </a>
+
+
+    <button
+        class="mobile-menu-button"
+        aria-label="Open navigation"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+
+<section class="gallery-hero">
+
+    <div class="gallery-hero-overlay">
+
+        <span>
+            THE QFR ARCHIVE
+        </span>
+
+        <h1>
+            SEE THE
+            <strong>FREQUENCY.</strong>
+        </h1>
+
+        <p>
+            Explore the people, places and moments
+            behind the music.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="gallery-main">
+
+
+<section class="artist-gallery-selector">
+
+    <div class="section-heading">
+
+        <span>
+            QUANTUM FREQUENCY RECORDS
+        </span>
+
+        <h2>
+            OUR ARTISTS
+        </h2>
+
+        <p>
+            Select an artist to enter their visual universe.
+        </p>
+
+    </div>
+
+
+    <div
+        id="artistCards"
+        class="artist-gallery-cards"
+    ></div>
+
+</section>
+
+
+
+<section
+    id="artistGallery"
+    class="artist-gallery"
+    hidden
+>
+
+
+<div class="artist-gallery-header">
+
+    <button
+        id="backToArtists"
+        class="gallery-back"
+    >
+        ← ALL ARTISTS
+    </button>
+
+
+    <div>
+
+        <span id="selectedArtistLabel">
+            ARTIST
+        </span>
+
+        <h2 id="selectedArtistName">
+            Artist
+        </h2>
+
+    </div>
+
+</div>
+
+
+
+<div
+    id="galleryCategories"
+    class="gallery-category-tabs"
+></div>
+
+
+
+<div
+    id="galleryCollections"
+    class="gallery-collections"
+></div>
+
+
+
+<div
+    id="galleryEmpty"
+    class="gallery-empty"
+    hidden
+>
+
+    <h3>
+        NO PHOTOS YET
+    </h3>
+
+    <p>
+        New images from this artist will appear here.
+    </p>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<div
+    id="galleryLightbox"
+    class="gallery-lightbox"
+    aria-hidden="true"
+>
+
+    <button
+        id="closeLightbox"
+        class="lightbox-close"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
+
+    <button
+        id="previousImage"
+        class="lightbox-navigation previous"
+        aria-label="Previous image"
+    >
+        ‹
+    </button>
+
+
+    <div class="lightbox-content">
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt=""
+        >
+
+
+        <div class="lightbox-information">
+
+            <span id="lightboxArtist"></span>
+
+            <h2 id="lightboxTitle"></h2>
+
+            <p id="lightboxDescription"></p>
+
+            <small id="lightboxMeta"></small>
+
+        </div>
+
+    </div>
+
+
+    <button
+        id="nextImage"
+        class="lightbox-navigation next"
+        aria-label="Next image"
+    >
+        ›
+    </button>
+
+</div>
+
+
+
+<footer class="site-footer">
+
+    <div class="footer-brand">
+
+        <img
+            src="../assets/images/qfr-logo.png"
+            alt="Quantum Frequency Records"
+        >
+
+        <p>
+            Pushing the boundaries of sound.
+            Elevating artistry. Creating legacy.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>NAVIGATION</h4>
+
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="artists.html">Artists</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="gallery.html">Gallery</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>SUPPORT</h4>
+
+        <a href="contact.html">Contact Us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Licensing</a>
+        <a href="#">Submissions</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>CONNECT</h4>
+
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>LEGAL</h4>
+
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+
+    </div>
+
+</footer>
+
+
+
+<script src="../assets/js/gallery.js"></script>
+
+</body>
+
+</html>
