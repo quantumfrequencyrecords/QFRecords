@@ -1,0 +1,1438 @@
+/* ============================================================
+   QF RECORDS — ARTISTS PAGE
+   ============================================================ */
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.artists-page {
+    background: #030608;
+    color: #f4f7f8;
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   ARTIST SYMBOL BANNER
+   ============================================================ */
+
+.artist-symbol-banner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #020304,
+            #05090b
+        );
+
+    border-bottom:
+        1px solid rgba(0, 220, 235, 0.12);
+
+    border-top:
+        1px solid rgba(255,255,255,0.05);
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+
+.artist-marquee-viewport {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+
+    touch-action: pan-x;
+
+    cursor: grab;
+}
+
+
+.artist-marquee-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+
+.artist-marquee-viewport.dragging {
+    cursor: grabbing;
+}
+
+
+.artist-marquee-track {
+
+    display: flex;
+
+    width: max-content;
+
+    height: 100%;
+
+    will-change: transform;
+
+    animation:
+        qfrArtistMarquee
+        42s
+        linear
+        infinite;
+}
+
+
+.artist-marquee-viewport:hover
+.artist-marquee-track {
+
+    animation-play-state: paused;
+
+}
+
+
+.artist-marquee-group {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+
+    flex-shrink: 0;
+}
+
+
+.artist-marquee-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 135px;
+
+    height: 100%;
+
+    padding:
+        0 22px;
+
+    border-right:
+        1px solid rgba(255,255,255,0.04);
+
+    color:
+        rgba(255,255,255,0.78);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        0.13em;
+
+    text-transform:
+        uppercase;
+
+    white-space:
+        nowrap;
+
+    transition:
+        color .25s ease,
+        background .25s ease;
+}
+
+
+.artist-marquee-item:hover {
+
+    color:
+        #00d9e8;
+
+    background:
+        rgba(0,220,235,0.04);
+
+}
+
+
+.artist-marquee-symbol {
+
+    width: 27px;
+    height: 27px;
+
+    margin-right: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(0,220,235,0.45);
+
+    border-radius: 50%;
+
+    color:
+        #00d9e8;
+
+    font-size:
+        7px;
+
+}
+
+
+@keyframes qfrArtistMarquee {
+
+    from {
+        transform: translate3d(0,0,0);
+    }
+
+    to {
+        transform: translate3d(-50%,0,0);
+    }
+
+}
+
+
+/* ============================================================
+   ARROWS
+   ============================================================ */
+
+.artist-marquee-arrow {
+
+    position: absolute;
+
+    top: 0;
+
+    z-index: 10;
+
+    width: 48px;
+
+    height: 100%;
+
+    border: 0;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2,4,5,1),
+            rgba(2,4,5,0)
+        );
+
+    font-size:
+        30px;
+
+    font-weight:
+        200;
+
+    cursor: pointer;
+
+}
+
+
+.artist-marquee-prev {
+    left: 0;
+}
+
+
+.artist-marquee-next {
+
+    right: 0;
+
+    transform:
+        scaleX(-1);
+
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.artists-hero {
+
+    position: relative;
+
+    min-height:
+        260px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(0,160,180,0.12),
+            transparent 55%
+        ),
+
+        linear-gradient(
+            180deg,
+            #030709,
+            #020405
+        );
+}
+
+
+.artists-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(0,220,235,0.6) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        110px 110px;
+
+    opacity:
+        .18;
+
+}
+
+
+.artists-hero-content {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    padding:
+        50px 20px 85px;
+
+}
+
+
+.artists-hero h1 {
+
+    margin:
+        12px 0 12px;
+
+    font-size:
+        clamp(2.4rem, 6vw, 5rem);
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        -.045em;
+
+    font-weight:
+        500;
+
+}
+
+
+.artists-hero h1 span {
+
+    color:
+        #00dce8;
+
+}
+
+
+.artists-hero-description {
+
+    margin:
+        0 auto;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size:
+        14px;
+
+    letter-spacing:
+        .02em;
+
+}
+
+
+/* ============================================================
+   WAVEFORM
+   ============================================================ */
+
+.artists-waveform {
+
+    position:
+        absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 22px;
+
+    width: 100%;
+
+    height: 65px;
+
+    z-index:
+        2;
+
+}
+
+
+.artists-waveform svg {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+}
+
+
+.artists-waveform path {
+
+    fill:
+        none;
+
+    stroke:
+        #00dce8;
+
+    stroke-width:
+        1.5;
+
+    opacity:
+        .85;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(0,220,235,.65)
+        );
+
+    stroke-dasharray:
+        2500;
+
+    animation:
+        qfrWave
+        5s
+        linear
+        infinite;
+
+}
+
+
+@keyframes qfrWave {
+
+    from {
+        stroke-dashoffset: 2500;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+
+}
+
+
+/* ============================================================
+   CONTROLS
+   ============================================================ */
+
+.artists-controls {
+
+    width:
+        min(90%, 1180px);
+
+    margin:
+        0 auto;
+
+    padding:
+        22px 0;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        25px;
+
+}
+
+
+.artists-filter {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+}
+
+
+.artists-filter label {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        .14em;
+
+    color:
+        rgba(255,255,255,.65);
+
+}
+
+
+.artists-filter select {
+
+    min-width:
+        125px;
+
+    padding:
+        9px 30px 9px 12px;
+
+    color:
+        white;
+
+    background:
+        #080c0e;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    font-size:
+        11px;
+
+}
+
+
+.artists-search {
+
+    position:
+        relative;
+
+    width:
+        245px;
+
+}
+
+
+.artists-search input {
+
+    width:
+        100%;
+
+    box-sizing:
+        border-box;
+
+    padding:
+        10px 36px 10px 13px;
+
+    background:
+        #080c0e;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    color:
+        white;
+
+    outline:
+        none;
+
+}
+
+
+.artists-search input:focus {
+
+    border-color:
+        #00dce8;
+
+}
+
+
+.artists-search span {
+
+    position:
+        absolute;
+
+    right:
+        12px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        #00dce8;
+
+}
+
+
+/* ============================================================
+   ROSTER
+   ============================================================ */
+
+.artists-roster {
+
+    width:
+        min(90%, 1180px);
+
+    margin:
+        0 auto 70px;
+
+}
+
+
+/* ============================================================
+   ARTIST CARD
+   ============================================================ */
+
+.artist-roster-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.35fr
+        1fr
+        .72fr;
+
+    min-height:
+        170px;
+
+    margin-bottom:
+        4px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    background:
+        #070b0d;
+
+}
+
+
+.artist-roster-card.reverse {
+
+    grid-template-columns:
+        .72fr
+        1fr
+        1.35fr;
+
+}
+
+
+.artist-roster-image {
+
+    position:
+        relative;
+
+    min-height:
+        170px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.artist-roster-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+    filter:
+        brightness(.72)
+        contrast(1.08);
+
+    transition:
+        transform .7s ease,
+        filter .7s ease;
+
+}
+
+
+.artist-roster-card:hover
+.artist-roster-image img {
+
+    transform:
+        scale(1.04);
+
+    filter:
+        brightness(.9)
+        contrast(1.08);
+
+}
+
+
+/* image overlay */
+
+.artist-roster-image::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.5)
+        );
+
+}
+
+
+/* ============================================================
+   ARTIST INFORMATION
+   ============================================================ */
+
+.artist-roster-info {
+
+    padding:
+        24px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a0f11,
+            #050809
+        );
+
+}
+
+
+.artist-roster-number {
+
+    margin-bottom:
+        7px;
+
+    color:
+        #00dce8;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .2em;
+
+}
+
+
+.artist-roster-name {
+
+    margin:
+        0 0 13px;
+
+    font-size:
+        clamp(1.25rem, 2.5vw, 2rem);
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        -.03em;
+
+}
+
+
+.artist-roster-genre {
+
+    margin-bottom:
+        13px;
+
+    color:
+        #00dce8;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .12em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.artist-roster-bio {
+
+    max-width:
+        430px;
+
+    margin:
+        0;
+
+    color:
+        rgba(255,255,255,.55);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* ============================================================
+   RELEASE PANEL
+   ============================================================ */
+
+.artist-roster-release {
+
+    padding:
+        18px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    background:
+        #050809;
+
+    border-left:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.artist-release-label {
+
+    color:
+        #00dce8;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .15em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.artist-release-art {
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    margin:
+        8px 0;
+
+    object-fit:
+        cover;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+}
+
+
+.artist-release-title {
+
+    font-size:
+        10px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .04em;
+
+}
+
+
+.artist-release-date {
+
+    margin-top:
+        5px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-size:
+        9px;
+
+}
+
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+
+.artist-roster-actions {
+
+    display:
+        flex;
+
+    gap:
+        6px;
+
+    margin-top:
+        10px;
+
+}
+
+
+.artist-roster-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        28px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid
+        rgba(0,220,235,.55);
+
+    color:
+        #00dce8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .1em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+
+}
+
+
+.artist-roster-button:hover {
+
+    color:
+        #000;
+
+    background:
+        #00dce8;
+
+}
+
+
+/* ============================================================
+   DISCOVER
+   ============================================================ */
+
+.artists-discover {
+
+    position:
+        relative;
+
+    min-height:
+        260px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    overflow:
+        hidden;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.artists-discover-background {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0,220,235,.25),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(0,100,150,.15),
+            transparent 30%
+        );
+
+}
+
+
+.artists-discover-content {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.artists-discover h2 {
+
+    margin:
+        10px 0 25px;
+
+    font-size:
+        clamp(2rem, 5vw, 4rem);
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        -.045em;
+
+}
+
+
+.qfr-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        12px 25px;
+
+    border:
+        1px solid
+        #00dce8;
+
+    color:
+        #00dce8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .16em;
+
+    text-transform:
+        uppercase;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+
+}
+
+
+.qfr-button:hover {
+
+    background:
+        #00dce8;
+
+    color:
+        #000;
+
+}
+
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.artists-loading {
+
+    min-height:
+        250px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-direction:
+        column;
+
+    gap:
+        15px;
+
+    color:
+        rgba(255,255,255,.5);
+
+}
+
+
+.artists-loader {
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    border-top-color:
+        #00dce8;
+
+    border-radius:
+        50%;
+
+    animation:
+        qfrLoader
+        1s linear infinite;
+
+}
+
+
+@keyframes qfrLoader {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+
+    .artist-symbol-banner {
+
+        height:
+            65px;
+
+    }
+
+
+    .artist-marquee-track {
+
+        animation-duration:
+            32s;
+
+    }
+
+
+    .artist-marquee-item {
+
+        min-width:
+            115px;
+
+        padding:
+            0 14px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .artist-marquee-symbol {
+
+        width:
+            22px;
+
+        height:
+            22px;
+
+        margin-right:
+            7px;
+
+    }
+
+
+    .artist-marquee-arrow {
+
+        width:
+            32px;
+
+        font-size:
+            24px;
+
+    }
+
+
+    .artists-hero {
+
+        min-height:
+            300px;
+
+    }
+
+
+    .artists-hero-content {
+
+        padding:
+            45px 20px 80px;
+
+    }
+
+
+    .artists-hero h1 {
+
+        font-size:
+            clamp(2.1rem, 10vw, 3.4rem);
+
+    }
+
+
+    .artists-hero-description {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .artists-controls {
+
+        width:
+            calc(100% - 30px);
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            12px;
+
+    }
+
+
+    .artists-filter {
+
+        justify-content:
+            space-between;
+
+    }
+
+
+    .artists-filter select {
+
+        flex:
+            1;
+
+    }
+
+
+    .artists-search {
+
+        width:
+            100%;
+
+    }
+
+
+    .artists-roster {
+
+        width:
+            calc(100% - 20px);
+
+    }
+
+
+    .artist-roster-card,
+    .artist-roster-card.reverse {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        min-height:
+            0;
+
+    }
+
+
+    .artist-roster-image {
+
+        height:
+            210px;
+
+        min-height:
+            210px;
+
+    }
+
+
+    .artist-roster-info {
+
+        padding:
+            22px;
+
+    }
+
+
+    .artist-roster-release {
+
+        min-height:
+            140px;
+
+        border-left:
+            0;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.08);
+
+    }
+
+
+    .artist-release-art {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+    }
+
+
+    .artist-roster-actions {
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+}
