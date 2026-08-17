@@ -1,3 +1,131 @@
 {
-  "artists": []
+  "artists": [
+    {
+      "artistId": "buckshot-bourbon",
+      "artistName": "Buckshot Bourbon",
+      "heroImage": "../assets/images/artists/buckshot-bourbon/buckshot-bourbon.jpg",
+
+      "categories": [
+        {
+          "id": "full-band",
+          "name": "Full Band",
+          "photos": [
+            {
+              "id": "bb-full-001",
+              "title": "Buckshot Bourbon",
+              "image": "../assets/images/artists/buckshot-bourbon/gallery/full-band-01.jpg",
+              "location": "Long Island, NY",
+              "date": "",
+              "description": "Buckshot Bourbon full-band promotional image."
+            }
+          ]
+        },
+
+        {
+          "id": "live",
+          "name": "Live Performances",
+          "collections": [
+            {
+              "id": "long-island-2026",
+              "name": "Long Island — 2026",
+              "photos": [
+                {
+                  "id": "bb-live-001",
+                  "title": "Live Performance",
+                  "image": "../assets/images/artists/buckshot-bourbon/gallery/live-01.jpg",
+                  "location": "Long Island, NY",
+                  "date": "",
+                  "description": "Buckshot Bourbon performing live."
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "id": "members",
+          "name": "Band Members",
+          "collections": [
+            {
+              "id": "tucker-kennedy",
+              "name": "Tucker Kennedy",
+              "photos": [
+                {
+                  "id": "bb-tucker-001",
+                  "title": "Tucker Kennedy",
+                  "image": "../assets/images/artists/buckshot-bourbon/members/tucker-kennedy.jpg",
+                  "location": "Long Island, NY",
+                  "date": "",
+                  "description": "Tucker Kennedy — lead vocals and guitar."
+                }
+              ]
+            },
+
+            {
+              "id": "david-daniels",
+              "name": "David Daniels",
+              "photos": [
+                {
+                  "id": "bb-david-001",
+                  "title": "David Daniels",
+                  "image": "../assets/images/artists/buckshot-bourbon/members/david-daniels.jpg",
+                  "location": "Long Island, NY",
+                  "date": "",
+                  "description": "David Daniels — guitar and backing vocals."
+                }
+              ]
+            },
+
+            {
+              "id": "colt-mccrae",
+              "name": "Colt McCrae",
+              "photos": [
+                {
+                  "id": "bb-colt-001",
+                  "title": "Colt McCrae",
+                  "image": "../assets/images/artists/buckshot-bourbon/members/colt-mccrae.jpg",
+                  "location": "New York",
+                  "date": "",
+                  "description": "Colt McCrae — bass, banjo and additional instrumentation."
+                }
+              ]
+            },
+
+            {
+              "id": "jackson-reilly",
+              "name": "Jackson Reilly",
+              "photos": [
+                {
+                  "id": "bb-jackson-001",
+                  "title": "Jackson Reilly",
+                  "image": "../assets/images/artists/buckshot-bourbon/members/jackson-reilly.jpg",
+                  "location": "New York",
+                  "date": "",
+                  "description": "Jackson Reilly — drums and percussion."
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "id": "studio",
+          "name": "Studio",
+          "photos": []
+        },
+
+        {
+          "id": "behind-scenes",
+          "name": "Behind The Scenes",
+          "photos": []
+        },
+
+        {
+          "id": "promotional",
+          "name": "Promotional",
+          "photos": []
+        }
+      ]
+    }
+  ]
 }
