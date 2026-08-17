@@ -1,21 +1,12 @@
 {
-    "id": "burn-the-static",
-
-    "title": "Burn the Static",
-
-    "artistId": "firewall-nation",
-
-    "artistName": "Firewall Nation",
-
-    "releaseDate": "2026-08-01",
-
-    "youtubeId": "",
-
-    "thumbnail": "../assets/images/backgrounds/video-placeholder.jpg",
-
-    "description": "Firewall Nation confronts the noise in their latest visual.",
-
-    "featured": true,
-
-    "active": true
+  "id": "burn-the-static",
+  "title": "Burn the Static",
+  "artistId": "firewall-nation",
+  "artistName": "Firewall Nation",
+  "youtubeId": "YOUR_YOUTUBE_ID",
+  "category": "Official Music Video",
+  "description": "Official music video for Burn the Static.",
+  "releaseDate": "2026-08-01",
+  "featured": true,
+  "thumbnail": ""
 }
