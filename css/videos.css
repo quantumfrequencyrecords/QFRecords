@@ -1,0 +1,502 @@
+.videos-page {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(20,216,223,.08),
+            transparent 40%
+        ),
+        #03070a;
+}
+
+
+.videos-hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.4)
+        ),
+        url("../images/backgrounds/video-studio.jpg")
+        center / cover;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.videos-hero-content {
+    width: min(1200px,90%);
+    margin: auto;
+}
+
+
+.videos-hero-content > span {
+    color: #20d8df;
+
+    font-size: .7rem;
+
+    letter-spacing: .25em;
+}
+
+
+.videos-hero h1 {
+    margin: 20px 0;
+
+    font-size: clamp(
+        4rem,
+        9vw,
+        8rem
+    );
+
+    line-height: .9;
+}
+
+
+.videos-hero h1 strong {
+    color: #20d8df;
+}
+
+
+.videos-hero p {
+    color:
+        rgba(255,255,255,.6);
+
+    max-width: 500px;
+
+    font-size: 1.1rem;
+}
+
+
+.videos-main {
+    width: min(1200px,90%);
+
+    margin: auto;
+}
+
+
+.video-controls {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 12px;
+
+    padding: 50px 0;
+}
+
+
+.video-controls input,
+.video-controls select {
+
+    height: 48px;
+
+    padding: 0 15px;
+
+    color: white;
+
+    background: #071014;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+}
+
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+
+.section-heading span {
+    color: #20d8df;
+
+    font-size: .65rem;
+
+    letter-spacing: .2em;
+}
+
+
+.section-heading h2 {
+    margin: 8px 0;
+
+    font-size: 3rem;
+}
+
+
+.featured-video {
+    margin-bottom: 90px;
+}
+
+
+.featured-video-player {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #050a0d;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        rgba(255,255,255,.4);
+}
+
+
+.video-placeholder span {
+    color: #20d8df;
+
+    letter-spacing: .2em;
+}
+
+
+.featured-video-button {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    background: black;
+
+    cursor: pointer;
+}
+
+
+.featured-video-button img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.featured-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    background:
+        rgba(0,0,0,.35);
+}
+
+
+.featured-overlay span {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        #20d8df;
+
+    border-radius: 50%;
+
+    color: #20d8df;
+
+    font-size: 1.5rem;
+}
+
+
+.featured-overlay strong {
+    font-size: 1.5rem;
+}
+
+
+.video-library {
+    padding-bottom: 100px;
+}
+
+
+.video-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 22px;
+}
+
+
+.video-card {
+    background: #071014;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+
+.video-card-image {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    padding: 0;
+
+    border: 0;
+
+    background: #000;
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+
+.video-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.video-card-image span {
+    position: absolute;
+
+    left: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        #20d8df;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.8);
+
+    color: #20d8df;
+}
+
+
+.video-card-info {
+    padding: 20px;
+}
+
+
+.video-card-info small {
+    color: #20d8df;
+
+    letter-spacing: .1em;
+}
+
+
+.video-card-info h3 {
+    margin: 8px 0;
+}
+
+
+.video-card-info p {
+    margin: 0;
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-size: .75rem;
+}
+
+
+.video-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.94);
+}
+
+
+.video-modal.open {
+    display: flex;
+}
+
+
+.video-modal-inner {
+    position: relative;
+
+    width: min(1100px,100%);
+
+    background: #071014;
+
+    border:
+        1px solid
+        rgba(32,216,223,.4);
+}
+
+
+.video-modal-close {
+    position: absolute;
+
+    top: -45px;
+    right: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+
+.youtube-player {
+    aspect-ratio: 16 / 9;
+
+    background: black;
+}
+
+
+.youtube-player iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+.video-modal-info {
+    padding: 25px;
+}
+
+
+.video-modal-info span {
+    color: #20d8df;
+
+    font-size: .7rem;
+
+    letter-spacing: .15em;
+}
+
+
+.video-modal-info h2 {
+    margin: 8px 0;
+}
+
+
+.video-modal-info p {
+    color:
+        rgba(255,255,255,.6);
+
+    line-height: 1.7;
+}
+
+
+.video-empty {
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+
+.video-empty h3 {
+    font-size: 2rem;
+}
+
+
+.video-empty p {
+    color:
+        rgba(255,255,255,.5);
+}
+
+
+@media (max-width: 800px) {
+
+    .video-controls {
+        grid-template-columns: 1fr;
+    }
+
+
+    .video-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .videos-hero {
+        min-height: 420px;
+    }
+
+
+    .videos-hero h1 {
+        font-size: 4rem;
+    }
+
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-heading h2 {
+        font-size: 2.3rem;
+    }
+
+}
