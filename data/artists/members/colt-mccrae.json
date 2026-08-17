@@ -1,0 +1,21 @@
+{
+  "id": "colt-mccrae",
+  "artistId": "buckshot-bourbon",
+  "name": "Colt McCrae",
+  "nickname": "Buckshot",
+  "role": [
+    "Bass Guitar",
+    "Banjo",
+    "Mandolin",
+    "Harmonica",
+    "Percussion"
+  ],
+  "hometown": "New York",
+  "height": "5'9\"",
+  "weight": "180 lbs",
+  "build": "Average",
+  "profile": "High-energy showman whose personality and unmistakable patriotic stage look became part of the band's identity.",
+  "visualIdentity": "American flag bandana, American flag cape, dramatic handlebar mustache, short dark hair with volume, black T-shirt, dark jeans, and decorative cowboy boots.",
+  "bio": "Colt “Buckshot” McCrae met Tucker and David in middle school. He quickly became part of their circle and their garage-based musical sanctuary. Colt brought raw energy, humor, heart, and a larger-than-life personality to the group. His American flag cape began as a Fourth of July performance idea and became a defining part of his stage wardrobe after the crowd went wild for it.",
+  "image": "../assets/images/artists/buckshot-bourbon/members/colt-mccrae.jpg"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "jackson-reilly",
+  "artistId": "buckshot-bourbon",
+  "name": "Jackson Reilly",
+  "nickname": "Crash",
+  "role": [
+    "Drums",
+    "Percussion",
+    "Backup Vocals"
+  ],
+  "hometown": "New York",
+  "height": "5'11\"",
+  "weight": "185 lbs",
+  "build": "Athletic",
+  "profile": "Quiet, disciplined rhythmic engine who anchors the band's live sound.",
+  "visualIdentity": "Clean-cut, slicked-back short hair, clean-shaven appearance, aviator or rectangular dark sunglasses, fitted black T-shirt, dark-wash jeans, and occasional backwards snapback.",
+  "bio": "Jackson “Crash” Reilly was the youngest member of the group. David noticed Jackson's natural rhythmic patterns while they were both involved in school football and invited him to the band's garage rehearsal. Jackson sat behind the kit and immediately demonstrated a steady, controlled, unusually clean playing style. He formally joined the group that night. He later attended school in New York and gigged with local jazz and rock groups before rejoining the others as Buckshot Bourbon became a serious working band.",
+  "image": "../assets/images/artists/buckshot-bourbon/members/jackson-reilly.jpg"
+}

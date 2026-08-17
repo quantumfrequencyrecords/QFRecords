@@ -1,0 +1,21 @@
+{
+  "id": "tucker-kennedy",
+  "artistId": "buckshot-bourbon",
+  "name": "Tucker Kennedy",
+  "nickname": "Tuck",
+  "role": [
+    "Lead Vocals",
+    "Acoustic Guitar",
+    "Electric Guitar",
+    "Harmonica",
+    "Mandolin"
+  ],
+  "hometown": "Smithtown, New York",
+  "height": "6'0\"",
+  "weight": "200 lbs",
+  "build": "Athletic",
+  "profile": "Charismatic singer/songwriter with a warm, confident frontman presence.",
+  "visualIdentity": "Clean cut, short-to-medium natural hair, five o’clock shadow, long-sleeve shirt, blue or black jeans, cowboy hat, and occasional aviator sunglasses.",
+  "bio": "Tucker “Tuck” Kennedy grew up three houses away from David Daniels in Smithtown, New York. The two became inseparable childhood friends and were inspired to learn guitar after experiencing a live concert at Jones Beach. Tuck later studied business upstate, while staying connected to the band before returning to the group and helping build its original catalog and live presence.",
+  "image": "../assets/images/artists/buckshot-bourbon/members/tucker-kennedy.jpg"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "david-daniels",
+  "artistId": "buckshot-bourbon",
+  "name": "David Daniels",
+  "nickname": "Fireball",
+  "role": [
+    "Backup Vocals",
+    "Electric Guitar",
+    "Lead Guitar",
+    "Bass Guitar",
+    "Banjo",
+    "Mandolin"
+  ],
+  "hometown": "Smithtown, New York",
+  "height": "6'3\"",
+  "weight": "220 lbs",
+  "build": "Athletic",
+  "profile": "Intense, gritty guitarist and multi-instrumentalist with a commanding country-rock presence.",
+  "visualIdentity": "Short pompadour-style hair, clean-cut medium-length beard and curled mustache, long-sleeve button-down with vest, and aviator sunglasses.",
+  "bio": "David “Fireball” Daniels grew up three houses away from Tucker Kennedy in Smithtown, New York. The pair began learning guitar together after a formative concert experience at Jones Beach. David later spent time in Tennessee immersed in Nashville's musical ecosystem. That experience became part of the band's development when the four friends reunited and began building a serious catalog and live network.",
+  "image": "../assets/images/artists/buckshot-bourbon/members/david-daniels.jpg"
+}
