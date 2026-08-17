@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const musicGrid =
         document.getElementById("musicGrid");
 
-    const searchInput =
-        document.getElementById("musicSearch");
+    const featuredSong =
+        document.getElementById("featuredSong");
 
     const artistFilter =
         document.getElementById("artistFilter");
@@ -12,23 +12,76 @@ document.addEventListener("DOMContentLoaded", function () {
     const genreFilter =
         document.getElementById("genreFilter");
 
-    const albumFilter =
-        document.getElementById("albumFilter");
+    const musicSearch =
+        document.getElementById("musicSearch");
 
-    const resultCount =
-        document.getElementById("resultCount");
+    const musicEmpty =
+        document.getElementById("musicEmpty");
 
-    const noResults =
-        document.getElementById("noResults");
+
+    const songModal =
+        document.getElementById("songModal");
+
+    const closeSongModal =
+        document.getElementById("closeSongModal");
+
+
+    const modalArtwork =
+        document.getElementById("modalArtwork");
+
+    const modalArtist =
+        document.getElementById("modalArtist");
+
+    const modalTitle =
+        document.getElementById("modalTitle");
+
+    const modalAlbum =
+        document.getElementById("modalAlbum");
+
+    const modalLyrics =
+        document.getElementById("modalLyrics");
+
+    const spotifyButton =
+        document.getElementById("spotifyButton");
+
+    const playModalSong =
+        document.getElementById("playModalSong");
+
 
     const audioPlayer =
         document.getElementById("audioPlayer");
 
-    const playerSong =
-        document.getElementById("playerSong");
+    const playerArtwork =
+        document.getElementById("playerArtwork");
+
+    const playerTitle =
+        document.getElementById("playerTitle");
+
+    const playerArtist =
+        document.getElementById("playerArtist");
+
+    const playerPlay =
+        document.getElementById("playerPlay");
+
+    const playerSeek =
+        document.getElementById("playerSeek");
+
+    const playerCurrent =
+        document.getElementById("playerCurrent");
+
+    const playerDuration =
+        document.getElementById("playerDuration");
+
+    const playerClose =
+        document.getElementById("playerClose");
+
+    const nowPlaying =
+        document.getElementById("nowPlaying");
 
 
     let songs = [];
+
+    let currentSong = null;
 
 
     loadMusic();
@@ -39,104 +92,37 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
 
             const response =
-                await fetch("../data/artists/index.json");
+                await fetch(
+                    "../data/music/index.json"
+                );
+
 
             if (!response.ok) {
+
                 throw new Error(
-                    "Artist index could not be loaded."
+                    "Music database unavailable."
                 );
+
             }
 
-            const index =
+
+            const data =
                 await response.json();
 
 
-            const artistData =
-                await Promise.all(
-
-                    index.artists.map(
-                        async function (artist) {
-
-                            const response =
-                                await fetch(
-                                    "../data/artists/" +
-                                    artist.file
-                                );
-
-                            if (!response.ok) {
-                                return null;
-                            }
-
-                            return await response.json();
-
-                        }
-                    )
-
-                );
-
-
-            artistData
-                .filter(Boolean)
-                .forEach(function (artist) {
-
-                    if (!artist.releases) {
-                        return;
-                    }
-
-
-                    artist.releases.forEach(
-                        function (release) {
-
-                            if (!release.songs) {
-                                return;
-                            }
-
-
-                            release.songs.forEach(
-                                function (song) {
-
-                                    songs.push({
-
-                                        ...song,
-
-                                        artistId:
-                                            artist.id,
-
-                                        artistName:
-                                            artist.name,
-
-                                        artistGenre:
-                                            artist.genre,
-
-                                        albumTitle:
-                                            release.title,
-
-                                        albumYear:
-                                            release.year,
-
-                                        releaseType:
-                                            release.type,
-
-                                        releaseArtwork:
-                                            release.artwork
-
-                                    });
-
-                                }
-                            );
-
-                        }
-                    );
-
-                });
+            songs =
+                data.songs || [];
 
 
             buildFilters();
 
+            renderFeatured();
+
             renderSongs();
 
+        }
 
-        } catch (error) {
+        catch (error) {
 
             console.error(error);
 
@@ -144,14 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="music-error">
 
-                    <h3>
-                        MUSIC LIBRARY UNAVAILABLE
-                    </h3>
-
-                    <p>
-                        The QFR music library could not
-                        be loaded.
-                    </p>
+                    Unable to load the QFR music catalog.
 
                 </div>
 
@@ -167,7 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const artists =
             [...new Set(
                 songs.map(
-                    song => song.artistName
+                    song =>
+                        song.artistName
                 )
             )].sort();
 
@@ -175,339 +155,679 @@ document.addEventListener("DOMContentLoaded", function () {
         const genres =
             [...new Set(
                 songs.map(
-                    song => song.artistGenre
+                    song =>
+                        song.genre
                 )
             )].sort();
 
 
-        const albums =
-            [...new Set(
-                songs.map(
-                    song => song.albumTitle
-                )
-            )].sort();
+        artists.forEach(
+            function (artist) {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
 
 
-        artists.forEach(function (artist) {
-
-            const option =
-                document.createElement("option");
-
-            option.value =
-                artist;
-
-            option.textContent =
-                artist;
-
-            artistFilter.appendChild(option);
-
-        });
+                option.value =
+                    artist;
 
 
-        genres.forEach(function (genre) {
-
-            const option =
-                document.createElement("option");
-
-            option.value =
-                genre;
-
-            option.textContent =
-                genre;
-
-            genreFilter.appendChild(option);
-
-        });
+                option.textContent =
+                    artist;
 
 
-        albums.forEach(function (album) {
+                artistFilter.appendChild(
+                    option
+                );
 
-            const option =
-                document.createElement("option");
+            }
+        );
 
-            option.value =
-                album;
 
-            option.textContent =
-                album;
+        genres.forEach(
+            function (genre) {
 
-            albumFilter.appendChild(option);
+                const option =
+                    document.createElement(
+                        "option"
+                    );
 
-        });
+
+                option.value =
+                    genre;
+
+
+                option.textContent =
+                    genre;
+
+
+                genreFilter.appendChild(
+                    option
+                );
+
+            }
+        );
 
     }
 
 
-    function getFilteredSongs() {
+    function renderFeatured() {
 
-        const search =
-            searchInput.value
-                .trim()
-                .toLowerCase();
-
-
-        const artist =
-            artistFilter.value;
-
-
-        const genre =
-            genreFilter.value;
-
-
-        const album =
-            albumFilter.value;
-
-
-        return songs.filter(function (song) {
-
-            const searchable = (
-
-                song.title +
-                " " +
-                song.artistName +
-                " " +
-                song.albumTitle +
-                " " +
-                song.artistGenre
-
-            ).toLowerCase();
-
-
-            const matchesSearch =
-                !search ||
-                searchable.includes(search);
-
-
-            const matchesArtist =
-                artist === "all" ||
-                song.artistName === artist;
-
-
-            const matchesGenre =
-                genre === "all" ||
-                song.artistGenre === genre;
-
-
-            const matchesAlbum =
-                album === "all" ||
-                song.albumTitle === album;
-
-
-            return (
-                matchesSearch &&
-                matchesArtist &&
-                matchesGenre &&
-                matchesAlbum
+        const song =
+            songs.find(
+                item =>
+                    item.featured
             );
 
-        });
+
+        if (!song) {
+
+            featuredSong.innerHTML = `
+
+                <p>
+                    No featured song available.
+                </p>
+
+            `;
+
+            return;
+
+        }
+
+
+        featuredSong.innerHTML = `
+
+            <div class="featured-song-art">
+
+                <img
+                    src="${song.artwork}"
+                    alt="${escapeHTML(
+                        song.title
+                    )}"
+                >
+
+            </div>
+
+
+            <div class="featured-song-info">
+
+                <span>
+                    FEATURED RELEASE
+                </span>
+
+                <h3>
+                    ${escapeHTML(
+                        song.title
+                    )}
+                </h3>
+
+                <p>
+                    ${escapeHTML(
+                        song.artistName
+                    )}
+                </p>
+
+                <button
+                    class="music-button primary"
+                    data-song-id="${song.id}"
+                >
+                    ▶ LISTEN NOW
+                </button>
+
+            </div>
+
+        `;
+
+
+        const button =
+            featuredSong.querySelector(
+                "button"
+            );
+
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                openSong(song);
+
+            }
+        );
 
     }
 
 
     function renderSongs() {
 
-        const filtered =
-            getFilteredSongs();
+        const search =
+            musicSearch.value
+                .trim()
+                .toLowerCase();
+
+
+        const selectedArtist =
+            artistFilter.value;
+
+
+        const selectedGenre =
+            genreFilter.value;
+
+
+        const filteredSongs =
+            songs.filter(
+                function (song) {
+
+                    const matchesSearch =
+
+                        !search ||
+
+                        song.title
+                            .toLowerCase()
+                            .includes(search) ||
+
+                        song.artistName
+                            .toLowerCase()
+                            .includes(search) ||
+
+                        song.albumName
+                            .toLowerCase()
+                            .includes(search);
+
+
+                    const matchesArtist =
+
+                        selectedArtist === "all" ||
+
+                        song.artistName ===
+                            selectedArtist;
+
+
+                    const matchesGenre =
+
+                        selectedGenre === "all" ||
+
+                        song.genre ===
+                            selectedGenre;
+
+
+                    return (
+                        matchesSearch &&
+                        matchesArtist &&
+                        matchesGenre
+                    );
+
+                }
+            );
 
 
         musicGrid.innerHTML = "";
 
 
-        resultCount.textContent =
-            filtered.length +
-            (
-                filtered.length === 1
-                    ? " SONG"
-                    : " SONGS"
+        musicEmpty.hidden =
+            filteredSongs.length !== 0;
+
+
+        filteredSongs.forEach(
+            function (song) {
+
+                musicGrid.appendChild(
+                    createSongCard(song)
+                );
+
+            }
+        );
+
+    }
+
+
+    function createSongCard(song) {
+
+        const card =
+            document.createElement(
+                "article"
             );
 
 
-        noResults.hidden =
-            filtered.length !== 0;
+        card.className =
+            "music-card";
 
 
-        filtered.forEach(function (song) {
+        card.innerHTML = `
 
-            const card =
-                document.createElement("article");
+            <div class="music-card-art">
 
-            card.className =
-                "music-card";
+                <img
+                    src="${song.artwork}"
+                    alt="${escapeHTML(
+                        song.title
+                    )}"
+                    loading="lazy"
+                >
 
+                <button
+                    class="card-play"
+                    aria-label="Play song"
+                >
+                    ▶
+                </button>
 
-            card.innerHTML = `
-
-                <div class="music-artwork">
-
-                    <img
-                        src="${song.artwork || song.releaseArtwork}"
-                        alt="${escapeHTML(song.title)}"
-                        loading="lazy"
-                    >
-
-                    <button
-                        class="music-play"
-                        data-audio="${song.audio || ""}"
-                        data-title="${escapeHTML(song.title)}"
-                        data-artist="${escapeHTML(song.artistName)}"
-                    >
-                        ▶
-                    </button>
-
-                </div>
+            </div>
 
 
-                <div class="music-card-info">
+            <div class="music-card-content">
 
-                    <span class="music-artist">
-                        ${escapeHTML(song.artistName)}
-                    </span>
+                <span>
+                    ${escapeHTML(
+                        song.artistName
+                    )}
+                </span>
 
-                    <h3>
-                        ${escapeHTML(song.title)}
-                    </h3>
+                <h3>
+                    ${escapeHTML(
+                        song.title
+                    )}
+                </h3>
 
-                    <p>
-                        ${escapeHTML(song.albumTitle)}
-                    </p>
+                <p>
+                    ${escapeHTML(
+                        song.albumName
+                    )}
+                </p>
 
+            </div>
 
-                    <div class="music-card-actions">
-
-                        <button
-                            class="lyrics-button"
-                            data-title="${escapeHTML(song.title)}"
-                            data-artwork="${song.artwork || song.releaseArtwork}"
-                            data-lyrics="${encodeURIComponent(song.lyrics || "Lyrics coming soon.")}"
-                        >
-                            LYRICS
-                        </button>
+        `;
 
 
-                        ${
-                            song.spotify
-                            ?
-                            `
-                            <a
-                                href="${song.spotify}"
-                                target="_blank"
-                                rel="noopener"
-                                class="spotify-button"
-                            >
-                                SPOTIFY
-                            </a>
-                            `
-                            :
-                            ""
-                        }
+        const playButton =
+            card.querySelector(
+                ".card-play"
+            );
 
 
-                        <a
-                            href="artist.html?artist=${song.artistId}"
-                            class="artist-button"
-                        >
-                            ARTIST
-                        </a>
+        playButton.addEventListener(
+            "click",
+            function (event) {
 
-                    </div>
+                event.stopPropagation();
 
-                </div>
+                playSong(song);
 
-            `;
+            }
+        );
 
 
-            musicGrid.appendChild(card);
+        card.addEventListener(
+            "click",
+            function () {
 
-        });
+                openSong(song);
+
+            }
+        );
 
 
-        attachSongEvents();
+        return card;
 
     }
 
 
-    function attachSongEvents() {
+    function openSong(song) {
 
-        document
-            .querySelectorAll(".music-play")
-            .forEach(function (button) {
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        const audio =
-                            button.dataset.audio;
+        currentSong =
+            song;
 
 
-                        if (!audio) {
-
-                            playerSong.textContent =
-                                "Audio coming soon";
-
-                            return;
-
-                        }
+        modalArtwork.src =
+            song.artwork;
 
 
-                        audioPlayer.src =
-                            audio;
+        modalArtwork.alt =
+            song.title;
 
 
-                        playerSong.textContent =
-                            button.dataset.title +
-                            " — " +
-                            button.dataset.artist;
+        modalArtist.textContent =
+            song.artistName;
 
 
-                        audioPlayer.play();
-
-                    }
-                );
-
-            });
+        modalTitle.textContent =
+            song.title;
 
 
-        document
-            .querySelectorAll(".lyrics-button")
-            .forEach(function (button) {
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        document.getElementById(
-                            "modalTitle"
-                        ).textContent =
-                            button.dataset.title;
+        modalAlbum.textContent =
+            song.albumName;
 
 
-                        document.getElementById(
-                            "modalArtwork"
-                        ).src =
-                            button.dataset.artwork;
+        loadLyrics(song);
 
 
-                        document.getElementById(
-                            "modalLyrics"
-                        ).textContent =
-                            decodeURIComponent(
-                                button.dataset.lyrics
-                            );
+        if (
+            song.streaming &&
+            song.streaming.spotify
+        ) {
+
+            spotifyButton.href =
+                song.streaming.spotify;
+
+            spotifyButton.hidden =
+                false;
+
+        }
+
+        else {
+
+            spotifyButton.hidden =
+                true;
+
+        }
 
 
-                        openModal();
+        playModalSong.onclick =
+            function () {
 
-                    }
-                );
+                playSong(song);
 
-            });
+            };
+
+
+        songModal.classList.add(
+            "open"
+        );
+
+
+        songModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
 
     }
 
 
-    searchInput.addEventListener(
+    async function loadLyrics(song) {
+
+        if (
+            !song.lyrics ||
+            !song.lyrics.enabled ||
+            !song.lyrics.file
+        ) {
+
+            modalLyrics.textContent =
+                "Lyrics are not currently available.";
+
+            return;
+
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    song.lyrics.file
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Lyrics unavailable."
+                );
+
+            }
+
+
+            const lyrics =
+                await response.text();
+
+
+            modalLyrics.textContent =
+                lyrics;
+
+        }
+
+        catch (error) {
+
+            modalLyrics.textContent =
+                "Lyrics are not currently available.";
+
+        }
+
+    }
+
+
+    function playSong(song) {
+
+        if (
+            !song.audio ||
+            !song.audio.enabled ||
+            !song.audio.file
+        ) {
+
+            alert(
+                "Audio for this song has not been uploaded yet."
+            );
+
+            return;
+
+        }
+
+
+        currentSong =
+            song;
+
+
+        audioPlayer.src =
+            song.audio.file;
+
+
+        playerArtwork.src =
+            song.artwork;
+
+
+        playerTitle.textContent =
+            song.title;
+
+
+        playerArtist.textContent =
+            song.artistName;
+
+
+        nowPlaying.classList.add(
+            "visible"
+        );
+
+
+        audioPlayer.play()
+            .then(
+                function () {
+
+                    playerPlay.textContent =
+                        "Ⅱ";
+
+                }
+            )
+            .catch(
+                function (error) {
+
+                    console.error(error);
+
+                }
+            );
+
+    }
+
+
+    playerPlay.addEventListener(
+        "click",
+        function () {
+
+            if (
+                !audioPlayer.src
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                audioPlayer.paused
+            ) {
+
+                audioPlayer.play();
+
+                playerPlay.textContent =
+                    "Ⅱ";
+
+            }
+
+            else {
+
+                audioPlayer.pause();
+
+                playerPlay.textContent =
+                    "▶";
+
+            }
+
+        }
+    );
+
+
+    audioPlayer.addEventListener(
+        "loadedmetadata",
+        function () {
+
+            playerDuration.textContent =
+                formatTime(
+                    audioPlayer.duration
+                );
+
+        }
+    );
+
+
+    audioPlayer.addEventListener(
+        "timeupdate",
+        function () {
+
+            if (
+                !audioPlayer.duration
+            ) {
+
+                return;
+
+            }
+
+
+            const percentage =
+                (
+                    audioPlayer.currentTime /
+                    audioPlayer.duration
+                ) * 100;
+
+
+            playerSeek.value =
+                percentage;
+
+
+            playerCurrent.textContent =
+                formatTime(
+                    audioPlayer.currentTime
+                );
+
+        }
+    );
+
+
+    audioPlayer.addEventListener(
+        "ended",
+        function () {
+
+            playerPlay.textContent =
+                "▶";
+
+        }
+    );
+
+
+    playerSeek.addEventListener(
+        "input",
+        function () {
+
+            if (
+                !audioPlayer.duration
+            ) {
+
+                return;
+
+            }
+
+
+            audioPlayer.currentTime =
+                (
+                    playerSeek.value / 100
+                ) *
+                audioPlayer.duration;
+
+        }
+    );
+
+
+    playerClose.addEventListener(
+        "click",
+        function () {
+
+            audioPlayer.pause();
+
+            nowPlaying.classList.remove(
+                "visible"
+            );
+
+        }
+    );
+
+
+    closeSongModal.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+    songModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === songModal
+            ) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+    function closeModal() {
+
+        songModal.classList.remove(
+            "open"
+        );
+
+
+        songModal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    musicSearch.addEventListener(
         "input",
         renderSongs
     );
@@ -525,128 +845,71 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    albumFilter.addEventListener(
-        "change",
-        renderSongs
-    );
+    function formatTime(seconds) {
 
+        if (
+            !Number.isFinite(seconds)
+        ) {
 
-    document
-        .querySelectorAll(".music-filter")
-        .forEach(function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    document
-                        .querySelectorAll(".music-filter")
-                        .forEach(
-                            btn =>
-                            btn.classList.remove("active")
-                        );
-
-
-                    button.classList.add("active");
-
-                    const type =
-                        button.dataset.filter;
-
-
-                    if (type === "all") {
-
-                        albumFilter.value =
-                            "all";
-
-                    }
-
-
-                    renderSongs();
-
-                }
-            );
-
-        });
-
-
-    function openModal() {
-
-        const modal =
-            document.getElementById(
-                "songModal"
-            );
-
-
-        modal.classList.add("open");
-
-        modal.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-    }
-
-
-    function closeModal() {
-
-        const modal =
-            document.getElementById(
-                "songModal"
-            );
-
-
-        modal.classList.remove("open");
-
-        modal.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-    }
-
-
-    document.getElementById(
-        "closeSongModal"
-    ).addEventListener(
-        "click",
-        closeModal
-    );
-
-
-    document.getElementById(
-        "songModal"
-    ).addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                event.target ===
-                document.getElementById(
-                    "songModal"
-                )
-            ) {
-
-                closeModal();
-
-            }
+            return "0:00";
 
         }
-    );
+
+
+        const minutes =
+            Math.floor(
+                seconds / 60
+            );
+
+
+        const remainingSeconds =
+            Math.floor(
+                seconds % 60
+            );
+
+
+        return (
+            minutes +
+            ":" +
+            String(
+                remainingSeconds
+            ).padStart(
+                2,
+                "0"
+            )
+        );
+
+    }
 
 
     function escapeHTML(value) {
 
         return String(value)
 
-            .replaceAll("&", "&amp;")
+            .replaceAll(
+                "&",
+                "&amp;"
+            )
 
-            .replaceAll("<", "&lt;")
+            .replaceAll(
+                "<",
+                "&lt;"
+            )
 
-            .replaceAll(">", "&gt;")
+            .replaceAll(
+                ">",
+                "&gt;"
+            )
 
-            .replaceAll('"', "&quot;")
+            .replaceAll(
+                '"',
+                "&quot;"
+            )
 
-            .replaceAll("'", "&#039;");
+            .replaceAll(
+                "'",
+                "&#039;"
+            );
 
     }
 
