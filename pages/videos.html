@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Videos | Quantum Frequency Records</title>
+
+    <meta
+        name="description"
+        content="Watch music videos, live performances and visual experiences from Quantum Frequency Records."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/videos.css"
+    >
+
+</head>
+
+<body class="videos-page">
+
+
+<header class="site-header">
+
+    <a
+        href="../index.html"
+        class="site-logo"
+    >
+
+        <img
+            src="../assets/images/qfr-logo.png"
+            alt="Quantum Frequency Records"
+        >
+
+    </a>
+
+
+    <nav class="main-nav">
+
+        <a href="home.html">HOME</a>
+
+        <a href="news.html">NEWS</a>
+
+        <a href="artists.html">ARTISTS</a>
+
+        <a href="music.html">MUSIC</a>
+
+        <a
+            href="videos.html"
+            class="active"
+        >
+            VIDEOS
+        </a>
+
+        <a href="gallery.html">GALLERY</a>
+
+        <a href="about.html">ABOUT US</a>
+
+        <a href="contact.html">CONTACT US</a>
+
+    </nav>
+
+
+    <a
+        href="store.html"
+        class="store-link"
+    >
+        STORE
+    </a>
+
+
+    <button
+        class="mobile-menu-button"
+        aria-label="Open navigation"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+
+<section class="videos-hero">
+
+    <div class="videos-hero-content">
+
+        <span>
+            QUANTUM FREQUENCY RECORDS
+        </span>
+
+        <h1>
+            SEE THE
+            <strong>FREQUENCY.</strong>
+        </h1>
+
+        <p>
+            Music becomes experience.
+            Enter the visual side of QFR.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="videos-main">
+
+
+<section class="video-controls">
+
+    <input
+        id="videoSearch"
+        type="search"
+        placeholder="Search videos, artists or songs..."
+    >
+
+
+    <select id="videoArtistFilter">
+
+        <option value="all">
+            ALL ARTISTS
+        </option>
+
+    </select>
+
+
+    <select id="videoCategoryFilter">
+
+        <option value="all">
+            ALL CATEGORIES
+        </option>
+
+    </select>
+
+</section>
+
+
+
+<section class="featured-video">
+
+    <div class="section-heading">
+
+        <span>
+            VIDEO SPOTLIGHT
+        </span>
+
+        <h2>
+            FEATURED
+        </h2>
+
+    </div>
+
+
+    <div
+        id="featuredVideo"
+        class="featured-video-player"
+    >
+
+        <div class="video-placeholder">
+
+            <span>
+                QFR VIDEO UNIVERSE
+            </span>
+
+            <p>
+                Featured video will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="video-library">
+
+    <div class="section-heading">
+
+        <span>
+            QFR VIDEO LIBRARY
+        </span>
+
+        <h2>
+            ALL VIDEOS
+        </h2>
+
+    </div>
+
+
+    <div
+        id="videoGrid"
+        class="video-grid"
+    >
+    </div>
+
+
+    <div
+        id="videoEmpty"
+        class="video-empty"
+        hidden
+    >
+
+        <h3>
+            NO VIDEOS FOUND
+        </h3>
+
+        <p>
+            Check back soon for new QFR visual experiences.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<div
+    id="videoModal"
+    class="video-modal"
+>
+
+    <div class="video-modal-inner">
+
+        <button
+            id="closeVideoModal"
+            class="video-modal-close"
+        >
+            ×
+        </button>
+
+
+        <div
+            id="videoPlayer"
+            class="youtube-player"
+        >
+        </div>
+
+
+        <div class="video-modal-info">
+
+            <span id="modalVideoArtist"></span>
+
+            <h2 id="modalVideoTitle"></h2>
+
+            <p id="modalVideoDescription"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<footer class="site-footer">
+
+    <div class="footer-brand">
+
+        <img
+            src="../assets/images/qfr-logo.png"
+            alt="Quantum Frequency Records"
+        >
+
+        <p>
+            Pushing the boundaries of sound.
+            Elevating artistry. Creating legacy.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>NAVIGATION</h4>
+
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="artists.html">Artists</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="gallery.html">Gallery</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>CONNECT</h4>
+
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>LEGAL</h4>
+
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+
+    </div>
+
+</footer>
+
+
+
+<script src="../assets/js/videos.js"></script>
+
+</body>
+
+</html>
