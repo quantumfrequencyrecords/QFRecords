@@ -10,7 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Music | Quantum Frequency Records</title>
+    <title>
+        Music | Quantum Frequency Records
+    </title>
 
     <meta
         name="description"
@@ -28,6 +30,7 @@
     >
 
 </head>
+
 
 <body class="music-page">
 
@@ -108,22 +111,21 @@
 
 <section class="music-hero">
 
-    <div class="music-hero-overlay"></div>
-
     <div class="music-hero-content">
 
-        <div class="music-eyebrow">
+        <span>
             QUANTUM FREQUENCY RECORDS
-        </div>
+        </span>
 
         <h1>
             THE
-            <span>FREQUENCY.</span>
+            <strong>SOUND</strong>
+            UNIVERSE
         </h1>
 
         <p>
-            Explore the sounds, stories and vibrations
-            coming from the QFR universe.
+            Discover the artists, albums and songs
+            creating the QFR frequency.
         </p>
 
     </div>
@@ -132,106 +134,80 @@
 
 
 
-<nav class="music-toolbar">
-
-    <button
-        class="music-filter active"
-        data-filter="all"
-    >
-        ALL MUSIC
-    </button>
-
-    <button
-        class="music-filter"
-        data-filter="albums"
-    >
-        ALBUMS
-    </button>
-
-    <button
-        class="music-filter"
-        data-filter="singles"
-    >
-        SINGLES
-    </button>
-
-</nav>
-
-
-
 <main class="music-main">
 
 
-<section class="music-controls">
+<section class="music-featured">
 
-    <div class="music-search">
+    <div class="music-section-heading">
 
-        <input
-            type="search"
-            id="musicSearch"
-            placeholder="Search songs, artists or albums..."
-            autocomplete="off"
-        >
+        <span>
+            QFR NOW PLAYING
+        </span>
 
-    </div>
-
-
-    <div class="music-selects">
-
-        <select id="artistFilter">
-
-            <option value="all">
-                ALL ARTISTS
-            </option>
-
-        </select>
-
-
-        <select id="genreFilter">
-
-            <option value="all">
-                ALL GENRES
-            </option>
-
-        </select>
-
-
-        <select id="albumFilter">
-
-            <option value="all">
-                ALL ALBUMS
-            </option>
-
-        </select>
+        <h2>
+            THE FREQUENCY
+        </h2>
 
     </div>
+
+
+    <div
+        id="featuredSong"
+        class="featured-song"
+    ></div>
 
 </section>
 
 
 
-<section class="music-results">
+<section class="music-library">
 
-    <div class="music-results-header">
+    <div class="music-section-heading">
 
-        <div>
+        <span>
+            EXPLORE THE CATALOG
+        </span>
 
-            <span>
-                QFR MUSIC LIBRARY
-            </span>
+        <h2>
+            ALL MUSIC
+        </h2>
 
-            <h2>
-                ALL FREQUENCIES
-            </h2>
+    </div>
 
-        </div>
 
-        <div
-            id="resultCount"
-            class="result-count"
+    <div class="music-controls">
+
+        <input
+            type="search"
+            id="musicSearch"
+            placeholder="Search artists, songs or albums..."
+            aria-label="Search music"
         >
-            Loading...
-        </div>
+
+
+        <select
+            id="artistFilter"
+            aria-label="Filter by artist"
+        >
+
+            <option value="all">
+                All Artists
+            </option>
+
+        </select>
+
+
+        <select
+            id="genreFilter"
+            aria-label="Filter by genre"
+        >
+
+            <option value="all">
+                All Genres
+            </option>
+
+        </select>
 
     </div>
 
@@ -239,22 +215,21 @@
     <div
         id="musicGrid"
         class="music-grid"
-    >
-    </div>
+    ></div>
 
 
     <div
-        id="noResults"
-        class="no-results"
+        id="musicEmpty"
+        class="music-empty"
         hidden
     >
 
         <h3>
-            NO FREQUENCY FOUND
+            NO MUSIC FOUND
         </h3>
 
         <p>
-            Try another artist, album, genre or search.
+            Try another search or filter.
         </p>
 
     </div>
@@ -266,51 +241,89 @@
 
 
 
-<!-- SONG MODAL -->
+<!-- SONG / LYRICS MODAL -->
 
 <div
     id="songModal"
-    class="qfr-modal"
+    class="song-modal"
     aria-hidden="true"
 >
 
-    <div class="modal-inner">
+    <button
+        id="closeSongModal"
+        class="song-modal-close"
+        aria-label="Close song"
+    >
+        ×
+    </button>
 
-        <button
-            class="modal-close"
-            id="closeSongModal"
-        >
-            ×
-        </button>
+
+    <div class="song-modal-content">
 
 
-        <div class="song-modal-grid">
+        <div class="song-artwork">
 
-            <div>
+            <img
+                id="modalArtwork"
+                src=""
+                alt=""
+            >
 
-                <img
-                    id="modalArtwork"
-                    src=""
-                    alt=""
+        </div>
+
+
+        <div class="song-details">
+
+            <span id="modalArtist">
+            </span>
+
+
+            <h2 id="modalTitle">
+            </h2>
+
+
+            <p id="modalAlbum">
+            </p>
+
+
+            <div class="song-actions">
+
+                <button
+                    id="playModalSong"
+                    class="music-button primary"
                 >
+                    ▶ PLAY
+                </button>
+
+
+                <a
+                    id="spotifyButton"
+                    class="music-button"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    hidden
+                >
+                    OPEN SPOTIFY
+                </a>
 
             </div>
 
 
-            <div>
+            <div class="lyrics-container">
 
-                <div class="section-label">
-                    SONG
+                <div class="lyrics-heading">
+
+                    <span>
+                        LYRICS
+                    </span>
+
                 </div>
 
-                <h2 id="modalTitle">
-                </h2>
 
-                <div
-                    id="modalLyrics"
-                    class="lyrics-container"
-                >
-                </div>
+                <pre id="modalLyrics">
+                    Lyrics unavailable.
+                </pre>
 
             </div>
 
@@ -322,29 +335,83 @@
 
 
 
-<!-- NOW PLAYING -->
+<!-- NOW PLAYING PLAYER -->
 
 <div
-    id="qfrPlayer"
-    class="qfr-player"
+    id="nowPlaying"
+    class="now-playing"
 >
 
-    <div class="player-info">
+
+    <div class="now-playing-artwork">
+
+        <img
+            id="playerArtwork"
+            src="../assets/images/qfr-logo.png"
+            alt="Now playing"
+        >
+
+    </div>
+
+
+    <div class="now-playing-info">
 
         <span>
             NOW PLAYING
         </span>
 
-        <strong id="playerSong">
-            Nothing playing
+        <strong id="playerTitle">
+            Select a song
         </strong>
+
+        <small id="playerArtist">
+            Quantum Frequency Records
+        </small>
 
     </div>
 
 
+    <button
+        id="playerPlay"
+        class="player-play"
+        aria-label="Play or pause"
+    >
+        ▶
+    </button>
+
+
+    <div class="player-progress">
+
+        <span id="playerCurrent">
+            0:00
+        </span>
+
+        <input
+            id="playerSeek"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+        >
+
+        <span id="playerDuration">
+            0:00
+        </span>
+
+    </div>
+
+
+    <button
+        id="playerClose"
+        class="player-close"
+        aria-label="Close player"
+    >
+        ×
+    </button>
+
+
     <audio
         id="audioPlayer"
-        controls
         preload="metadata"
     ></audio>
 
@@ -353,7 +420,6 @@
 
 
 <footer class="site-footer">
-
 
     <div class="footer-brand">
 
@@ -372,82 +438,51 @@
 
     <div class="footer-column">
 
-        <h4>
-            NAVIGATION
-        </h4>
+        <h4>NAVIGATION</h4>
 
-        <a href="home.html">
-            Home
-        </a>
-
-        <a href="news.html">
-            News
-        </a>
-
-        <a href="artists.html">
-            Artists
-        </a>
-
-        <a href="music.html">
-            Music
-        </a>
-
-        <a href="videos.html">
-            Videos
-        </a>
-
-        <a href="gallery.html">
-            Gallery
-        </a>
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="artists.html">Artists</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html">Videos</a>
+        <a href="gallery.html">Gallery</a>
 
     </div>
 
 
     <div class="footer-column">
 
-        <h4>
-            CONNECT
-        </h4>
+        <h4>SUPPORT</h4>
 
-        <a href="#">
-            Instagram
-        </a>
-
-        <a href="#">
-            YouTube
-        </a>
-
-        <a href="#">
-            TikTok
-        </a>
-
-        <a href="#">
-            Facebook
-        </a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Licensing</a>
+        <a href="#">Submissions</a>
 
     </div>
 
 
     <div class="footer-column">
 
-        <h4>
-            LEGAL
-        </h4>
+        <h4>CONNECT</h4>
 
-        <a href="#">
-            Privacy Policy
-        </a>
-
-        <a href="#">
-            Terms of Use
-        </a>
-
-        <a href="#">
-            Cookie Policy
-        </a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
 
     </div>
 
+
+    <div class="footer-column">
+
+        <h4>LEGAL</h4>
+
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+
+    </div>
 
 </footer>
 
