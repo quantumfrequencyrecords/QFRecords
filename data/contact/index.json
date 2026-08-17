@@ -1,0 +1,79 @@
+{
+  "contactReasons": [
+    {
+      "id": "general-feedback",
+      "label": "General Label Feedback",
+      "description": "Share your thoughts about Quantum Frequency Records."
+    },
+    {
+      "id": "artist-feedback",
+      "label": "Artist Feedback",
+      "description": "Tell us what you think about one of our artists."
+    },
+    {
+      "id": "album-feedback",
+      "label": "Album Feedback",
+      "description": "Send feedback about a QFR album."
+    },
+    {
+      "id": "song-feedback",
+      "label": "Song Feedback",
+      "description": "Tell us what you think about a song."
+    },
+    {
+      "id": "complaint",
+      "label": "Complaint",
+      "description": "Report an issue or concern."
+    },
+    {
+      "id": "collaboration",
+      "label": "Request Collaboration",
+      "description": "Contact QFR about a creative or business collaboration."
+    },
+    {
+      "id": "content-use",
+      "label": "Request Use of QFR Content",
+      "description": "Request permission to use music, videos, artwork or other QFR content."
+    },
+    {
+      "id": "purchase-song",
+      "label": "Purchase a Song",
+      "description": "Ask about purchasing or licensing a QFR song."
+    },
+    {
+      "id": "purchase-stems",
+      "label": "Request Song Stems",
+      "description": "Ask about purchasing individual song stems."
+    },
+    {
+      "id": "store-suggestion",
+      "label": "Store Suggestion",
+      "description": "Suggest a product or improvement for the QFR store."
+    },
+    {
+      "id": "store-feedback",
+      "label": "Store Feedback",
+      "description": "Tell us about your experience with the QFR store."
+    },
+    {
+      "id": "press",
+      "label": "Press / Media",
+      "description": "Media, interview, review or publication inquiries."
+    },
+    {
+      "id": "business",
+      "label": "Business Inquiry",
+      "description": "Business, partnership or professional inquiry."
+    },
+    {
+      "id": "fan-message",
+      "label": "Fan Message",
+      "description": "Send a message to QFR or one of our artists."
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "description": "Something that doesn't fit another category."
+    }
+  ]
+}
