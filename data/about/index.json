@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "eyebrow": "QUANTUM FREQUENCY RECORDS",
+    "title": "MORE THAN A LABEL.",
+    "highlight": "A FREQUENCY.",
+    "description": "A home for artists, ideas and sounds that refuse to stay inside the lines."
+  },
+
+  "intro": {
+    "eyebrow": "THE FREQUENCY",
+    "title": "SOUND SHOULD MOVE YOU.",
+    "paragraphs": [
+      "Quantum Frequency Records exists for music that creates a reaction. Music that makes you stop, listen, think, feel and come back for another listen.",
+      "We are building a home for artists and sounds that live beyond traditional boundaries — from rock and country to electronic, industrial, alternative, psychedelic and everything in between."
+    ]
+  },
+
+  "philosophy": {
+    "eyebrow": "OUR PHILOSOPHY",
+    "title": "DISCOVER. HARNESS. NURTURE. SUCCEED.",
+    "items": [
+      {
+        "number": "01",
+        "title": "DISCOVER",
+        "text": "Find the sounds, ideas and artists that make people stop listening to everything else."
+      },
+      {
+        "number": "02",
+        "title": "HARNESS",
+        "text": "Turn creative energy into music, identity and experiences that people can connect with."
+      },
+      {
+        "number": "03",
+        "title": "NURTURE",
+        "text": "Build worlds around artists rather than simply releasing songs."
+      },
+      {
+        "number": "04",
+        "title": "SUCCEED",
+        "text": "Create opportunities for great music to find the audience it deserves."
+      }
+    ]
+  },
+
+  "difference": {
+    "eyebrow": "WHY QFR",
+    "title": "NO SINGLE SOUND DEFINES US.",
+    "paragraph": "QFR is intentionally genre-fluid. Our roster can move from country rock to nu-metal, progressive rock to electronic music, psychedelic rock to punk and beyond.",
+    "statement": "THE ONLY RULE IS THAT IT HAS TO SOUND LIKE SOMETHING WORTH HEARING."
+  },
+
+  "technology": {
+    "eyebrow": "THE NEXT FREQUENCY",
+    "title": "WHERE TECHNOLOGY MEETS CREATIVITY.",
+    "paragraphs": [
+      "Quantum Frequency Records embraces new creative technology as another instrument in the creative process.",
+      "Our catalog includes artists and music created through AI-assisted workflows, including music developed with generative tools such as Suno. These tools allow us to experiment with voices, arrangements, sounds and entire musical identities at a scale that would have been difficult to imagine only a few years ago.",
+      "But technology is not the destination. The music is."
+    ],
+    "statement": "USE THE TECHNOLOGY. CHASE THE IDEA. SERVE THE SONG."
+  },
+
+  "ecosystem": {
+    "eyebrow": "THE QFR UNIVERSE",
+    "title": "MUSIC IS ONLY THE BEGINNING.",
+    "items": [
+      "Artists",
+      "Albums",
+      "Singles",
+      "Videos",
+      "Photography",
+      "Stories",
+      "Merchandise",
+      "Live Experiences"
+    ]
+  },
+
+  "mission": {
+    "eyebrow": "OUR MISSION",
+    "title": "BUILD SOMETHING PEOPLE WANT TO RETURN TO.",
+    "paragraph": "Every release is an opportunity to create another doorway into the QFR universe. Our goal is to build a catalog that rewards discovery and artists that feel like they belong to something larger than a single song.",
+    "statement": "CREATE MUSIC. BUILD WORLDS. LEAVE A FREQUENCY BEHIND."
+  },
+
+  "cta": {
+    "eyebrow": "ENTER THE FREQUENCY",
+    "title": "READY TO EXPLORE?",
+    "text": "Discover the artists, music and stories that make up Quantum Frequency Records."
+  }
+}
