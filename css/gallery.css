@@ -1,0 +1,1025 @@
+.gallery-page {
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(20,216,223,.08),
+            transparent 40%
+        ),
+        #03070a;
+}
+
+
+.gallery-hero {
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.9),
+            rgba(0,0,0,.35)
+        ),
+
+        url("../images/backgrounds/gallery-studio.jpg")
+        center / cover;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.gallery-hero-overlay {
+
+    width:
+        min(1200px,90%);
+
+    margin:
+        auto;
+
+}
+
+
+.gallery-hero-overlay span {
+
+    color:
+        #20d8df;
+
+    font-size:
+        .7rem;
+
+    letter-spacing:
+        .25em;
+
+}
+
+
+.gallery-hero h1 {
+
+    margin:
+        20px 0;
+
+    font-size:
+        clamp(
+            4rem,
+            9vw,
+            8rem
+        );
+
+    line-height:
+        .9;
+
+}
+
+
+.gallery-hero h1 strong {
+
+    color:
+        #20d8df;
+
+}
+
+
+.gallery-hero p {
+
+    max-width:
+        520px;
+
+    color:
+        rgba(255,255,255,.6);
+
+    font-size:
+        1.05rem;
+
+}
+
+
+.gallery-main {
+
+    width:
+        min(1250px,90%);
+
+    margin:
+        auto;
+
+    padding:
+        90px 0;
+
+}
+
+
+.section-heading {
+
+    margin-bottom:
+        45px;
+
+}
+
+
+.section-heading span {
+
+    color:
+        #20d8df;
+
+    font-size:
+        .65rem;
+
+    letter-spacing:
+        .2em;
+
+}
+
+
+.section-heading h2 {
+
+    margin:
+        8px 0;
+
+    font-size:
+        clamp(
+            2.5rem,
+            6vw,
+            4.5rem
+        );
+
+}
+
+
+.section-heading p {
+
+    color:
+        rgba(255,255,255,.5);
+
+}
+
+
+.artist-gallery-cards {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.artist-gallery-card {
+
+    position:
+        relative;
+
+    min-height:
+        390px;
+
+    padding:
+        0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        #071014;
+
+    color:
+        white;
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+}
+
+
+.artist-gallery-image {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.artist-gallery-image::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.05)
+        );
+
+}
+
+
+.artist-gallery-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.artist-gallery-card:hover
+.artist-gallery-image img {
+
+    transform:
+        scale(1.06);
+
+}
+
+
+.artist-gallery-card-content {
+
+    position:
+        absolute;
+
+    left:
+        25px;
+
+    right:
+        25px;
+
+    bottom:
+        25px;
+
+    z-index:
+        2;
+
+}
+
+
+.artist-gallery-card-content span {
+
+    color:
+        #20d8df;
+
+    font-size:
+        .6rem;
+
+    letter-spacing:
+        .18em;
+
+}
+
+
+.artist-gallery-card-content h3 {
+
+    margin:
+        8px 0 15px;
+
+    font-size:
+        1.5rem;
+
+}
+
+
+.artist-gallery-card-content strong {
+
+    color:
+        #20d8df;
+
+    font-size:
+        .7rem;
+
+    letter-spacing:
+        .1em;
+
+}
+
+
+.artist-gallery {
+
+    padding-top:
+        20px;
+
+}
+
+
+.artist-gallery-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    margin-bottom:
+        35px;
+
+}
+
+
+.gallery-back {
+
+    padding:
+        12px 18px;
+
+    border:
+        1px solid
+        rgba(32,216,223,.5);
+
+    background:
+        transparent;
+
+    color:
+        #20d8df;
+
+    cursor:
+        pointer;
+
+    font-size:
+        .7rem;
+
+    letter-spacing:
+        .12em;
+
+}
+
+
+.artist-gallery-header span {
+
+    color:
+        #20d8df;
+
+    font-size:
+        .65rem;
+
+    letter-spacing:
+        .2em;
+
+}
+
+
+.artist-gallery-header h2 {
+
+    margin:
+        5px 0;
+
+    font-size:
+        clamp(
+            2.5rem,
+            6vw,
+            4rem
+        );
+
+}
+
+
+.gallery-category-tabs {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    overflow-x:
+        auto;
+
+    padding-bottom:
+        15px;
+
+    margin-bottom:
+        50px;
+
+}
+
+
+.gallery-category {
+
+    flex:
+        0 0 auto;
+
+    padding:
+        12px 18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        transparent;
+
+    color:
+        rgba(255,255,255,.6);
+
+    cursor:
+        pointer;
+
+    font-size:
+        .65rem;
+
+    letter-spacing:
+        .1em;
+
+}
+
+
+.gallery-category.active,
+.gallery-category:hover {
+
+    border-color:
+        #20d8df;
+
+    color:
+        #20d8df;
+
+}
+
+
+.gallery-collection {
+
+    margin-bottom:
+        65px;
+
+}
+
+
+.collection-heading {
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.collection-heading span {
+
+    color:
+        #20d8df;
+
+    font-size:
+        .6rem;
+
+    letter-spacing:
+        .18em;
+
+}
+
+
+.collection-heading h3 {
+
+    margin:
+        7px 0;
+
+    font-size:
+        1.7rem;
+
+}
+
+
+.photo-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        12px;
+
+}
+
+
+.gallery-photo {
+
+    position:
+        relative;
+
+    aspect-ratio:
+        1 / 1;
+
+    padding:
+        0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    background:
+        #071014;
+
+    cursor:
+        pointer;
+
+}
+
+
+.gallery-photo img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.gallery-photo:hover img {
+
+    transform:
+        scale(1.07);
+
+}
+
+
+.gallery-photo span {
+
+    position:
+        absolute;
+
+    left:
+        12px;
+
+    right:
+        12px;
+
+    bottom:
+        12px;
+
+    color:
+        white;
+
+    font-size:
+        .7rem;
+
+    text-align:
+        left;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.gallery-photo:hover span {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.gallery-empty {
+
+    padding:
+        100px 20px;
+
+    text-align:
+        center;
+
+}
+
+
+.gallery-empty h3 {
+
+    font-size:
+        2rem;
+
+}
+
+
+.gallery-empty p {
+
+    color:
+        rgba(255,255,255,.5);
+
+}
+
+
+.gallery-error {
+
+    grid-column:
+        1 / -1;
+
+    padding:
+        60px;
+
+    color:
+        #20d8df;
+
+    text-align:
+        center;
+
+}
+
+
+.gallery-lightbox {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        3000;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        30px;
+
+    background:
+        rgba(0,0,0,.96);
+
+}
+
+
+.gallery-lightbox.open {
+
+    display:
+        flex;
+
+}
+
+
+.lightbox-content {
+
+    width:
+        min(1100px,90vw);
+
+    max-height:
+        90vh;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    background:
+        #071014;
+
+    border:
+        1px solid
+        rgba(32,216,223,.35);
+
+}
+
+
+.lightbox-content img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    max-height:
+        80vh;
+
+    object-fit:
+        contain;
+
+    background:
+        #020405;
+
+}
+
+
+.lightbox-information {
+
+    padding:
+        35px;
+
+    align-self:
+        center;
+
+}
+
+
+.lightbox-information span {
+
+    color:
+        #20d8df;
+
+    font-size:
+        .7rem;
+
+    letter-spacing:
+        .15em;
+
+}
+
+
+.lightbox-information h2 {
+
+    margin:
+        10px 0;
+
+}
+
+
+.lightbox-information p {
+
+    color:
+        rgba(255,255,255,.6);
+
+    line-height:
+        1.7;
+
+}
+
+
+.lightbox-information small {
+
+    color:
+        rgba(255,255,255,.4);
+
+}
+
+
+.lightbox-close {
+
+    position:
+        fixed;
+
+    top:
+        20px;
+
+    right:
+        25px;
+
+    z-index:
+        5;
+
+    border:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    font-size:
+        2.5rem;
+
+    cursor:
+        pointer;
+
+}
+
+
+.lightbox-navigation {
+
+    position:
+        fixed;
+
+    top:
+        50%;
+
+    z-index:
+        5;
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    border:
+        1px solid
+        rgba(32,216,223,.5);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0,0,0,.7);
+
+    color:
+        #20d8df;
+
+    font-size:
+        2rem;
+
+    cursor:
+        pointer;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.lightbox-navigation.previous {
+
+    left:
+        25px;
+
+}
+
+
+.lightbox-navigation.next {
+
+    right:
+        25px;
+
+}
+
+
+@media (max-width: 1000px) {
+
+    .artist-gallery-cards {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+
+    .photo-grid {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .gallery-hero {
+
+        min-height:
+            420px;
+
+    }
+
+
+    .artist-gallery-cards {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .photo-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .artist-gallery-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column-reverse;
+
+    }
+
+
+    .lightbox-content {
+
+        grid-template-columns:
+            1fr;
+
+        max-height:
+            85vh;
+
+        overflow:
+            auto;
+
+    }
+
+
+    .lightbox-content img {
+
+        max-height:
+            50vh;
+
+    }
+
+
+    .lightbox-information {
+
+        padding:
+            20px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .artist-gallery-cards {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .gallery-main {
+
+        width:
+            92%;
+
+    }
+
+
+    .lightbox-navigation {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+
+    .lightbox-navigation.previous {
+
+        left:
+            8px;
+
+    }
+
+
+    .lightbox-navigation.next {
+
+        right:
+            8px;
+
+    }
+
+}
