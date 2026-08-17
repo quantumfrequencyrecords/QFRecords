@@ -1,1 +1,712 @@
+/* ============================================================
+   QFRECORDS — ARTISTS PAGE
+   ============================================================ */
 
+.artists-page {
+    background: #050505;
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.artists-hero {
+    position: relative;
+    min-height: 78vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(105, 105, 105, 0.16),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #030303 0%,
+            #080808 100%
+        );
+}
+
+
+.artists-hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    opacity: 0.35;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+}
+
+
+.artists-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 20%,
+            rgba(0,0,0,0.75) 100%
+        );
+}
+
+
+.artists-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 90%);
+
+    padding-top: 80px;
+}
+
+
+.artists-hero-content h1 {
+    margin: 15px 0 25px;
+
+    font-size:
+        clamp(4rem, 10vw, 9rem);
+
+    line-height: 0.9;
+
+    font-weight: 700;
+
+    letter-spacing: -0.06em;
+}
+
+
+.qfr-eyebrow {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.35em;
+
+    text-transform: uppercase;
+
+    opacity: 0.65;
+}
+
+
+.artists-hero-description {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size:
+        clamp(1rem, 2vw, 1.35rem);
+
+    line-height: 1.7;
+
+    opacity: 0.7;
+}
+
+
+/* ============================================================
+   SCROLL INDICATOR
+   ============================================================ */
+
+.artists-scroll-indicator {
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+
+    opacity: 0.5;
+}
+
+
+.artists-scroll-indicator span {
+    display: block;
+
+    width: 1px;
+    height: 45px;
+
+    background: #ffffff;
+
+    animation:
+        artistScrollPulse 2s
+        ease-in-out infinite;
+}
+
+
+@keyframes artistScrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scaleY(0.6);
+        transform-origin: top;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+}
+
+
+/* ============================================================
+   ARTIST TICKER
+   ============================================================ */
+
+.artist-ticker {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
+    background: #030303;
+}
+
+
+.artist-ticker-track {
+    display: flex;
+
+    width: max-content;
+
+    animation:
+        artistTickerMove
+        45s
+        linear
+        infinite;
+}
+
+
+.artist-ticker-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 22px 35px;
+
+    white-space: nowrap;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    opacity: 0.65;
+}
+
+
+.artist-ticker-symbol {
+    width: 22px;
+    height: 22px;
+
+    border:
+        1px solid rgba(255,255,255,0.4);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.6rem;
+}
+
+
+@keyframes artistTickerMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* ============================================================
+   INTRODUCTION
+   ============================================================ */
+
+.artists-introduction {
+    width: min(850px, 90%);
+
+    margin: 0 auto;
+
+    padding:
+        130px 0 90px;
+
+    text-align: center;
+}
+
+
+.artists-introduction h2 {
+    margin: 15px 0 25px;
+
+    font-size:
+        clamp(2.5rem, 6vw, 5rem);
+
+    letter-spacing: -0.04em;
+}
+
+
+.artists-introduction > p:last-child {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    opacity: 0.6;
+}
+
+
+/* ============================================================
+   ARTIST LIST
+   ============================================================ */
+
+.artists-list {
+    width: 100%;
+}
+
+
+.artist-roster-card {
+    position: relative;
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    overflow: hidden;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+}
+
+
+.artist-roster-image {
+    position: relative;
+
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+
+.artist-roster-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        grayscale(15%)
+        contrast(1.08);
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+
+.artist-roster-card:hover
+.artist-roster-image img {
+
+    transform: scale(1.04);
+
+    filter:
+        grayscale(0%)
+        contrast(1.05);
+
+}
+
+
+/* ============================================================
+   IMAGE OVERLAY
+   ============================================================ */
+
+.artist-roster-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            rgba(0,0,0,0.7)
+        );
+}
+
+
+/* ============================================================
+   ARTIST NAME
+   ============================================================ */
+
+.artist-roster-name {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 40px;
+    bottom: 40px;
+
+    font-size:
+        clamp(2.5rem, 5vw, 5.5rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.05em;
+
+    max-width: 80%;
+}
+
+
+/* ============================================================
+   ARTIST INFORMATION
+   ============================================================ */
+
+.artist-roster-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        clamp(40px, 7vw, 100px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #090909,
+            #050505
+        );
+}
+
+
+.artist-roster-number {
+    margin-bottom: 25px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.3em;
+
+    opacity: 0.35;
+}
+
+
+.artist-roster-genre {
+    margin-bottom: 25px;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+
+.artist-roster-bio {
+    max-width: 500px;
+
+    margin-bottom: 35px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    opacity: 0.65;
+}
+
+
+/* ============================================================
+   BUTTON
+   ============================================================ */
+
+.artist-roster-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    padding:
+        14px 25px;
+
+    border:
+        1px solid rgba(255,255,255,0.35);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.18em;
+
+    font-size: 0.65rem;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.artist-roster-button:hover {
+    background: #ffffff;
+
+    color: #000000;
+
+    border-color: #ffffff;
+}
+
+
+/* ============================================================
+   ALTERNATING ARTIST ROWS
+   ============================================================ */
+
+.artist-roster-card.reverse {
+    direction: rtl;
+}
+
+
+.artist-roster-card.reverse
+.artist-roster-info,
+.artist-roster-card.reverse
+.artist-roster-image {
+
+    direction: ltr;
+
+}
+
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.artists-loading {
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    opacity: 0.5;
+}
+
+
+.artists-loader {
+
+    width: 30px;
+    height: 30px;
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation:
+        artistLoaderSpin
+        1s
+        linear
+        infinite;
+}
+
+
+@keyframes artistLoaderSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ============================================================
+   CTA
+   ============================================================ */
+
+.artists-cta {
+
+    padding:
+        150px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.08),
+            transparent 55%
+        );
+}
+
+
+.artists-cta-inner {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+.artists-cta h2 {
+
+    margin:
+        15px 0 25px;
+
+    font-size:
+        clamp(3rem, 7vw, 6rem);
+
+    letter-spacing: -0.05em;
+}
+
+
+.artists-cta p:not(.qfr-eyebrow) {
+
+    margin:
+        0 auto 35px;
+
+    max-width: 600px;
+
+    line-height: 1.8;
+
+    opacity: 0.6;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+    .artists-hero {
+        min-height: 70vh;
+    }
+
+
+    .artists-hero-content {
+        padding-top: 60px;
+    }
+
+
+    .artist-roster-card,
+    .artist-roster-card.reverse {
+
+        direction: ltr;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .artist-roster-image {
+
+        min-height: 450px;
+
+    }
+
+
+    .artist-roster-name {
+
+        left: 25px;
+        bottom: 25px;
+
+    }
+
+
+    .artist-roster-info {
+
+        padding:
+            55px 25px 65px;
+
+    }
+
+
+    .artist-ticker-item {
+
+        padding:
+            18px 25px;
+
+    }
+
+}
