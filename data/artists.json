@@ -1,13 +1,14 @@
 {
     "artists": [
         {
-            "id": "buckshot-bourbon",
-            "name": "Buckshot Bourbon",
-            "slug": "buckshot-bourbon",
-            "genre": "Country Rock",
-            "active": true,
-            "featured": false,
-            "sortOrder": 1
+    "id": "buckshot-bourbon",
+    "name": "Buckshot Bourbon",
+    "slug": "buckshot-bourbon",
+    "genre": "Country Rock",
+    "image": "../assets/images/artists/buckshot-bourbon.jpg",
+    "active": true,
+    "featured": false,
+    "sortOrder": 1
         },
 
         {
@@ -15,6 +16,7 @@
             "name": "Sawyer Kennedy",
             "slug": "sawyer-kennedy",
             "genre": "Nashville Country",
+            "image": "../assets/images/artists/sawyer-kennedy.jpg",
             "active": true,
             "featured": false,
             "sortOrder": 2
@@ -25,6 +27,7 @@
             "name": "Fractal Hearts",
             "slug": "fractal-hearts",
             "genre": "Progressive Rock / Space Rock / Alt Rock",
+            "image": "../assets/images/artists/fractal-hearts.jpg",
             "active": true,
             "featured": false,
             "sortOrder": 3
@@ -35,6 +38,7 @@
             "name": "Grassroots Rebellion",
             "slug": "grassroots-rebellion",
             "genre": "Punk Rock / Alt Rock / Pop Punk",
+            "image": "../assets/images/artists/grassroots-rebellion.jpg",
             "active": true,
             "featured": false,
             "sortOrder": 4
@@ -45,6 +49,7 @@
             "name": "Warpnotix",
             "slug": "warpnotix",
             "genre": "EDM / Electronic",
+            "image": "../assets/images/artists/warpnotix.jpg",
             "active": true,
             "featured": false,
             "sortOrder": 5
@@ -55,6 +60,7 @@
             "name": "Sound Shamans",
             "slug": "sound-shamans",
             "genre": "Alt Rock / Indie Rock",
+            "image": "../assets/images/artists/sound-shamans.jpg",
             "active": true,
             "featured": false, 
             "sortOrder": 6
@@ -65,6 +71,7 @@
             "name": "Immovable Giants",
             "slug": "immovable-giants",
             "genre": "Alt Rock / Indie Rock",
+                "image": "../assets/images/artists/immovable-giants.jpg",
             "active": true,
             "featured": false,     
             "sortOrder": 7
@@ -75,6 +82,7 @@
             "name": "The Jones Beach Boys",
             "slug": "jones-beach-boys",
             "genre": "60s Surf Rock",
+                "image": "../assets/images/artists/the-jones-beach-boys.jpg",
             "active": true,
             "featured": false, 
             "sortOrder": 8
@@ -85,6 +93,7 @@
             "name": "The Cosmic Run",
             "slug": "the-cosmic-run",
             "genre": "Alt Rock / Indie Rock / Folk Rock",
+                "image": "../assets/images/artists/the-cosmic-run.jpg",
             "active": true,
             "featured": false,    
             "sortOrder": 9
@@ -95,6 +104,7 @@
             "name": "Moonflower Radio",
             "slug": "moonflower-radio",
             "genre": "Alt Rock / Psychedelic Rock",
+                "image": "../assets/images/artists/moonflower-radio.jpg",
             "active": true,
             "featured": false, 
             "sortOrder": 10
@@ -105,6 +115,7 @@
             "name": "Find/Replace",
             "slug": "find-replace",
             "genre": "Industrial Rock / Nu-Metal / Alt Rock",
+                "image": "../assets/images/artists/find-replace.jpg",
             "active": true,
             "featured": false,
             "sortOrder": 11
@@ -115,6 +126,7 @@
             "name": "Immortal Prophets",
             "slug": "immortal-prophets",
             "genre": "Nu-Metal",
+                "image": "../assets/images/artists/immortal-prophets.jpg",
             "active": true,
             "featured": false,   
             "sortOrder": 12
@@ -125,6 +137,7 @@
             "name": "Firewall Nation",
             "slug": "firewall-nation",
             "genre": "Nu-Metal / Rap Rock",
+    "image": "../assets/images/artists/firewall-nation.jpg",
             "active": true,
             "featured": true,
             "sortOrder": 13
