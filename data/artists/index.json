@@ -1,0 +1,82 @@
+{
+  "artists": [
+    {
+      "id": "buckshot-bourbon",
+      "name": "Buckshot Bourbon",
+      "genre": "Country Rock",
+      "file": "buckshot-bourbon.json"
+    },
+    {
+      "id": "sawyer-kennedy",
+      "name": "Sawyer Kennedy",
+      "genre": "Nashville Country",
+      "file": "sawyer-kennedy.json"
+    },
+    {
+      "id": "fractal-hearts",
+      "name": "Fractal Hearts",
+      "genre": "Progressive Rock / Space Rock / Alt Rock",
+      "file": "fractal-hearts.json"
+    },
+    {
+      "id": "grassroots-rebellion",
+      "name": "Grassroots Rebellion",
+      "genre": "Punk Rock / Alt Rock / Punk Pop",
+      "file": "grassroots-rebellion.json"
+    },
+    {
+      "id": "warpnotix",
+      "name": "Warpnotix",
+      "genre": "Electronic / EDM",
+      "file": "warpnotix.json"
+    },
+    {
+      "id": "sound-shamans",
+      "name": "Sound Shamans",
+      "genre": "Alt Rock / Indie Rock",
+      "file": "sound-shamans.json"
+    },
+    {
+      "id": "immovable-giants",
+      "name": "Immovable Giants",
+      "genre": "Alt Rock / Indie Rock",
+      "file": "immovable-giants.json"
+    },
+    {
+      "id": "the-jones-beach-boys",
+      "name": "The Jones Beach Boys",
+      "genre": "60s Surf Rock",
+      "file": "the-jones-beach-boys.json"
+    },
+    {
+      "id": "the-cosmic-run",
+      "name": "The Cosmic Run",
+      "genre": "Alt Rock / Indie Rock / Folk Rock",
+      "file": "the-cosmic-run.json"
+    },
+    {
+      "id": "moonflower-radio",
+      "name": "Moonflower Radio",
+      "genre": "Alt Rock / Psychedelic Rock",
+      "file": "moonflower-radio.json"
+    },
+    {
+      "id": "find-replace",
+      "name": "Find/Replace",
+      "genre": "Industrial Rock / Nu-Metal / Alt Rock",
+      "file": "find-replace.json"
+    },
+    {
+      "id": "immortal-prophets",
+      "name": "Immortal Prophets",
+      "genre": "Nu-Metal",
+      "file": "immortal-prophets.json"
+    },
+    {
+      "id": "firewall-nation",
+      "name": "Firewall Nation",
+      "genre": "Nu-Metal / Rap Rock",
+      "file": "firewall-nation.json"
+    }
+  ]
+}
