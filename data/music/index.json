@@ -1,0 +1,39 @@
+{
+  "songs": [
+    {
+      "id": "buckshot-bourbon-burn-the-static",
+      "title": "Burn the Static",
+      "artistId": "buckshot-bourbon",
+      "artistName": "Buckshot Bourbon",
+      "albumId": "buckshot-bourbon-dead-reckoning",
+      "albumName": "Dead Reckoning",
+      "genre": "Country Rock",
+      "releaseDate": "2026-08-01",
+
+      "artwork": "../assets/images/artists/buckshot-bourbon/albums/dead-reckoning.jpg",
+
+      "audio": {
+        "enabled": true,
+        "file": "../assets/audio/buckshot-bourbon/burn-the-static.mp3"
+      },
+
+      "streaming": {
+        "spotify": "",
+        "youtube": ""
+      },
+
+      "lyrics": {
+        "enabled": true,
+        "file": "../data/lyrics/buckshot-bourbon/burn-the-static.txt"
+      },
+
+      "featured": true,
+      "latest": true,
+
+      "stats": {
+        "streams": 0,
+        "views": 0
+      }
+    }
+  ]
+}
