@@ -1,20 +1,20 @@
 {
   "songs": [
     {
-      "id": "buckshot-bourbon-burn-the-static",
-      "title": "Burn the Static",
+      "id": "buckshot-bourbon-island-time",
+      "title": "Island Time",
       "artistId": "buckshot-bourbon",
       "artistName": "Buckshot Bourbon",
-      "albumId": "buckshot-bourbon-dead-reckoning",
-      "albumName": "Dead Reckoning",
+      "albumId": "buckshot-bourbon-first-rounds-on-me",
+      "albumName": "First Rounds On Me",
       "genre": "Country Rock",
       "releaseDate": "2026-08-01",
 
-      "artwork": "../assets/images/artists/buckshot-bourbon/albums/dead-reckoning.jpg",
+      "artwork": "../assets/images/artists/buckshot-bourbon/album/first-rounds-on-me.jpg",
 
       "audio": {
         "enabled": true,
-        "file": "../assets/audio/buckshot-bourbon/burn-the-static.mp3"
+        "file": "../assets/audio/buckshot-bourbon/island-time.mp3"
       },
 
       "streaming": {
@@ -24,7 +24,7 @@
 
       "lyrics": {
         "enabled": true,
-        "file": "../data/lyrics/buckshot-bourbon/burn-the-static.txt"
+        "file": "../data/lyrics/buckshot-bourbon/island-time.txt"
       },
 
       "featured": true,
