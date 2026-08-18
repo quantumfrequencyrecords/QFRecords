@@ -1,0 +1,1606 @@
+/* ============================================================
+   QFRECORDS — HOME PAGE
+   Home-specific visual system
+   Requires: site.css
+============================================================ */
+
+
+/* ============================================================
+   HOME HERO
+============================================================ */
+
+.qfr-home-hero {
+    position: relative;
+    min-height: calc(100vh - 78px);
+    min-height: calc(100svh - 78px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background: #05070a;
+}
+
+.qfr-home-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    overflow: hidden;
+}
+
+.qfr-home-hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.46;
+    filter: saturate(0.72) contrast(1.15);
+    transform: scale(1.035);
+}
+
+.qfr-home-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 6, 10, 0.98) 0%,
+            rgba(3, 6, 10, 0.88) 34%,
+            rgba(3, 6, 10, 0.48) 67%,
+            rgba(3, 6, 10, 0.76) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(3, 6, 10, 0.42) 0%,
+            rgba(3, 6, 10, 0.05) 45%,
+            rgba(3, 6, 10, 0.94) 100%
+        );
+}
+
+.qfr-home-hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.14;
+
+    background-image:
+        linear-gradient(
+            rgba(80, 170, 255, 0.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(80, 170, 255, 0.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 72px 72px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 30%,
+        black 75%,
+        transparent
+    );
+}
+
+
+/* subtle ambient glow */
+
+.qfr-home-hero::after {
+    content: "";
+    position: absolute;
+    width: 46vw;
+    height: 46vw;
+    max-width: 680px;
+    max-height: 680px;
+    left: 42%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    background: rgba(35, 135, 255, 0.13);
+
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: -2;
+}
+
+
+/* ============================================================
+   HERO CONTENT
+============================================================ */
+
+.qfr-home-hero-content {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 120px 0 140px;
+    position: relative;
+    z-index: 2;
+}
+
+.qfr-home-hero .qfr-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.qfr-home-hero .qfr-eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 1px;
+    background: var(--qfr-blue, #3fa9ff);
+    box-shadow: 0 0 12px rgba(63, 169, 255, 0.8);
+}
+
+.qfr-home-hero h1 {
+    max-width: 780px;
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(52px, 7.2vw, 108px);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.qfr-home-hero h1 span {
+    display: block;
+    color: transparent;
+
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff 0%,
+            #a8d9ff 45%,
+            #3fa9ff 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    filter: drop-shadow(
+        0 0 24px rgba(63, 169, 255, 0.16)
+    );
+}
+
+.qfr-home-hero-description {
+    max-width: 630px;
+    margin: 34px 0 0;
+
+    font-size: clamp(17px, 1.7vw, 22px);
+    line-height: 1.7;
+    font-weight: 300;
+
+    color: rgba(238, 244, 250, 0.82);
+}
+
+.qfr-home-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 40px;
+}
+
+.qfr-button {
+    min-height: 50px;
+    padding: 0 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.qfr-button:hover {
+    transform: translateY(-3px);
+}
+
+.qfr-button-primary {
+    color: #02060b;
+    background: #62baff;
+    border-color: #62baff;
+
+    box-shadow:
+        0 0 22px rgba(63, 169, 255, 0.18);
+}
+
+.qfr-button-primary:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.22);
+}
+
+.qfr-button-secondary {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(8px);
+}
+
+.qfr-button-secondary:hover {
+    border-color: rgba(98, 186, 255, 0.75);
+    background: rgba(63, 169, 255, 0.08);
+}
+
+
+/* ============================================================
+   HERO META
+============================================================ */
+
+.qfr-home-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-top: 72px;
+
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.qfr-meta-line {
+    width: 100px;
+    height: 1px;
+    background: rgba(98, 186, 255, 0.55);
+}
+
+
+/* ============================================================
+   HERO SCROLL INDICATOR
+============================================================ */
+
+.qfr-home-hero-scroll {
+    position: absolute;
+    z-index: 4;
+
+    bottom: 34px;
+    right: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    transform: rotate(-90deg);
+    transform-origin: right center;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.qfr-scroll-line {
+    width: 65px;
+    height: 1px;
+    background: rgba(98, 186, 255, 0.65);
+}
+
+
+/* ============================================================
+   PHILOSOPHY
+============================================================ */
+
+.qfr-philosophy-section {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(24, 102, 165, 0.12),
+            transparent 34%
+        ),
+        #06090d;
+}
+
+.qfr-section {
+    position: relative;
+    padding: 120px 0;
+}
+
+.qfr-section-container {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.qfr-section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 480px);
+    gap: 60px;
+    align-items: end;
+
+    margin-bottom: 55px;
+}
+
+.qfr-section-heading h2 {
+    margin: 12px 0 0;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.qfr-section-heading p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 300;
+    color: rgba(230, 237, 245, 0.62);
+}
+
+
+/* ============================================================
+   PHILOSOPHY GRID
+============================================================ */
+
+.qfr-philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.qfr-philosophy-card {
+    position: relative;
+
+    min-height: 185px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    text-align: left;
+
+    color: #ffffff;
+
+    border: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.008)
+        );
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.qfr-philosophy-card:hover,
+.qfr-philosophy-card.active {
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(63, 169, 255, 0.14),
+            rgba(63, 169, 255, 0.025)
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(63, 169, 255, 0.34),
+        0 0 35px rgba(63, 169, 255, 0.08);
+}
+
+.philosophy-number {
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.32);
+}
+
+.philosophy-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(15px, 1.5vw, 20px);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.philosophy-icon {
+    position: absolute;
+    top: 24px;
+    right: 25px;
+
+    font-size: 20px;
+    font-weight: 300;
+
+    color: rgba(98, 186, 255, 0.65);
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.qfr-philosophy-card:hover .philosophy-icon,
+.qfr-philosophy-card.active .philosophy-icon {
+    transform: rotate(45deg);
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   PHILOSOPHY DETAIL
+============================================================ */
+
+.qfr-philosophy-detail {
+    position: relative;
+
+    max-height: 0;
+    overflow: hidden;
+
+    margin-top: 0;
+    padding: 0 35px;
+
+    border: 1px solid transparent;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.45s ease,
+        padding 0.45s ease,
+        margin 0.45s ease,
+        opacity 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.qfr-philosophy-detail.open {
+    max-height: 300px;
+
+    margin-top: 20px;
+    padding: 30px 70px 32px 35px;
+
+    opacity: 1;
+
+    border-color: rgba(63, 169, 255, 0.28);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(63, 169, 255, 0.07),
+            rgba(255, 255, 255, 0.015)
+        );
+}
+
+.qfr-detail-eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #62baff;
+}
+
+.qfr-philosophy-detail h3 {
+    margin: 9px 0 10px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.qfr-philosophy-detail p {
+    max-width: 800px;
+    margin: 0;
+
+    color: rgba(235, 241, 247, 0.7);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.qfr-detail-close {
+    position: absolute;
+    top: 19px;
+    right: 22px;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.qfr-detail-close:hover {
+    border-color: rgba(98, 186, 255, 0.6);
+    background: rgba(63, 169, 255, 0.1);
+}
+
+
+/* ============================================================
+   LATEST
+============================================================ */
+
+.qfr-latest-section {
+    background:
+        linear-gradient(
+            180deg,
+            #05080c,
+            #080d13
+        );
+}
+
+.qfr-latest-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    border-left: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.qfr-latest-card {
+    position: relative;
+
+    min-height: 105px;
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    text-align: left;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.018);
+
+    border: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.qfr-latest-card:hover,
+.qfr-latest-card.active {
+    background: rgba(63, 169, 255, 0.08);
+
+    box-shadow:
+        inset 0 -2px 0 #4eaeff,
+        0 0 28px rgba(63, 169, 255, 0.06);
+}
+
+.latest-card-number {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.32);
+}
+
+.latest-card-label {
+    padding-top: 12px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+    text-transform: uppercase;
+}
+
+.latest-card-arrow {
+    position: absolute;
+    top: 21px;
+    right: 20px;
+
+    color: rgba(98, 186, 255, 0.65);
+
+    font-size: 18px;
+}
+
+
+/* ============================================================
+   LATEST DISPLAY
+============================================================ */
+
+.qfr-latest-display {
+    min-height: 430px;
+
+    display: grid;
+    grid-template-columns: 48% 52%;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.008)
+        );
+}
+
+.latest-display-image {
+    position: relative;
+    min-height: 430px;
+    overflow: hidden;
+}
+
+.latest-display-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 65%,
+            rgba(5, 8, 12, 0.65)
+        ),
+        linear-gradient(
+            180deg,
+            transparent 60%,
+            rgba(5, 8, 12, 0.72)
+        );
+}
+
+.latest-display-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+
+    object-fit: cover;
+
+    opacity: 0.78;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.5s ease;
+}
+
+.qfr-latest-display:hover .latest-display-image img {
+    transform: scale(1.035);
+    opacity: 0.88;
+}
+
+.latest-display-scanline {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    pointer-events: none;
+
+    opacity: 0.14;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 3px,
+            rgba(255, 255, 255, 0.08) 4px
+        );
+}
+
+.latest-display-content {
+    padding: 65px 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.latest-display-content h3 {
+    margin: 15px 0 18px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 4vw, 55px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.latest-display-content p {
+    max-width: 540px;
+    margin: 0;
+
+    color: rgba(235, 241, 247, 0.67);
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.latest-display-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    margin-top: 27px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+
+    color: rgba(255, 255, 255, 0.42);
+}
+
+.latest-display-meta span {
+    color: #62baff;
+}
+
+.qfr-text-link {
+    width: fit-content;
+
+    margin-top: 32px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(98, 186, 255, 0.65);
+    padding-bottom: 7px;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.qfr-text-link:hover {
+    color: #62baff;
+    border-color: #62baff;
+}
+
+
+/* ============================================================
+   TRENDING
+============================================================ */
+
+.qfr-trending-section {
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(25, 106, 174, 0.1),
+            transparent 30%
+        ),
+        #05080c;
+}
+
+.qfr-trending-filter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+
+    margin-top: -15px;
+    margin-bottom: 35px;
+}
+
+.qfr-trending-filter button {
+    min-width: 80px;
+    height: 36px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.qfr-trending-filter button:hover,
+.qfr-trending-filter button.active {
+    color: #ffffff;
+
+    border-color: rgba(98, 186, 255, 0.55);
+
+    background: rgba(63, 169, 255, 0.09);
+}
+
+.qfr-trending-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.qfr-trending-card {
+    position: relative;
+
+    min-height: 480px;
+
+    display: block;
+
+    overflow: hidden;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: #090d12;
+
+    isolation: isolate;
+}
+
+.trending-card-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    overflow: hidden;
+}
+
+.trending-card-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05) 10%,
+            rgba(0, 0, 0, 0.1) 35%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+}
+
+.trending-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.82;
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.4s ease;
+}
+
+.qfr-trending-card:hover .trending-card-image img {
+    transform: scale(1.07);
+    opacity: 0.95;
+}
+
+.trending-card-overlay {
+    position: absolute;
+    inset: auto 0 0;
+
+    padding: 28px 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(3, 6, 10, 0.72) 20%,
+            rgba(3, 6, 10, 0.97)
+        );
+}
+
+.trending-card-category {
+    margin-bottom: 9px;
+
+    color: #62baff;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.trending-card-overlay strong {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(18px, 2vw, 27px);
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.trending-card-by {
+    margin-top: 6px;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 11px;
+}
+
+.trending-stat {
+    margin-top: 18px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.trending-timeframe {
+    position: absolute;
+    right: 25px;
+    bottom: 28px;
+
+    padding: 7px 9px;
+
+    border: 1px solid rgba(98, 186, 255, 0.25);
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   NEWSLETTER
+============================================================ */
+
+.qfr-newsletter-section {
+    padding-top: 100px;
+    padding-bottom: 150px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(35, 132, 211, 0.12),
+            transparent 56%
+        ),
+        #05080c;
+}
+
+.qfr-newsletter-container {
+    width: min(1040px, calc(100% - 80px));
+    margin: 0 auto;
+
+    padding: 70px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+
+    border: 1px solid rgba(98, 186, 255, 0.18);
+
+    background:
+        linear-gradient(
+            130deg,
+            rgba(63, 169, 255, 0.075),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    box-shadow:
+        0 0 70px rgba(25, 120, 200, 0.06);
+}
+
+.qfr-newsletter-copy h2 {
+    margin: 12px 0 17px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.qfr-newsletter-copy p {
+    margin: 0;
+
+    color: rgba(235, 241, 247, 0.6);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.qfr-newsletter-form {
+    width: 100%;
+}
+
+.qfr-newsletter-input {
+    display: flex;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.qfr-newsletter-input input {
+    min-width: 0;
+    flex: 1;
+
+    height: 55px;
+
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+.qfr-newsletter-input input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.qfr-newsletter-input button {
+    width: 55px;
+    height: 55px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #62baff;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+.qfr-newsletter-input button:hover {
+    transform: translateX(5px);
+    color: #ffffff;
+}
+
+.qfr-newsletter-form small {
+    display: block;
+
+    margin-top: 14px;
+
+    color: rgba(255, 255, 255, 0.28);
+
+    font-size: 9px;
+    letter-spacing: 0.08em;
+}
+
+.qfr-newsletter-message {
+    min-height: 20px;
+    margin-top: 10px;
+
+    font-size: 11px;
+    color: #62baff;
+}
+
+
+/* ============================================================
+   FREQUENCY LINE
+   Home-specific enhancement
+============================================================ */
+
+.qfr-frequency-line {
+    position: relative;
+
+    width: min(1240px, calc(100% - 80px));
+    height: 34px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.qfr-frequency-line::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 38px;
+    top: 50%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(63, 169, 255, 0.2),
+            rgba(63, 169, 255, 0.55),
+            rgba(63, 169, 255, 0.2)
+        );
+}
+
+.frequency-line-wave {
+    position: absolute;
+    right: 44px;
+
+    width: 130px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.frequency-line-wave span {
+    width: 2px;
+    height: 5px;
+
+    display: block;
+
+    background: #55b4ff;
+
+    box-shadow:
+        0 0 7px rgba(63, 169, 255, 0.8);
+
+    animation:
+        qfr-frequency-pulse 1.2s ease-in-out infinite;
+}
+
+.frequency-line-wave span:nth-child(2) {
+    height: 11px;
+    animation-delay: -0.15s;
+}
+
+.frequency-line-wave span:nth-child(3) {
+    height: 21px;
+    animation-delay: -0.3s;
+}
+
+.frequency-line-wave span:nth-child(4) {
+    height: 11px;
+    animation-delay: -0.45s;
+}
+
+.frequency-line-wave span:nth-child(5) {
+    height: 5px;
+    animation-delay: -0.6s;
+}
+
+.frequency-line-end {
+    position: absolute;
+    right: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(63, 169, 255, 0.45);
+
+    background: #06090d;
+
+    color: #62baff;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+@keyframes qfr-frequency-pulse {
+
+    0%,
+    100% {
+        transform: scaleY(0.65);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: scaleY(1.15);
+        opacity: 1;
+    }
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+.qfr-philosophy-card:focus-visible,
+.qfr-latest-card:focus-visible,
+.qfr-trending-filter button:focus-visible,
+.qfr-button:focus-visible,
+.qfr-text-link:focus-visible {
+    outline: 2px solid #62baff;
+    outline-offset: 3px;
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    .qfr-home-hero-content,
+    .qfr-section-container,
+    .qfr-frequency-line {
+        width: min(100% - 48px, 900px);
+    }
+
+    .qfr-home-hero-content {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
+    .qfr-section {
+        padding: 95px 0;
+    }
+
+    .qfr-section-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .qfr-philosophy-card {
+        min-height: 160px;
+    }
+
+    .qfr-latest-display {
+        grid-template-columns: 1fr;
+    }
+
+    .latest-display-image,
+    .latest-display-image img {
+        min-height: 350px;
+    }
+
+    .latest-display-content {
+        padding: 45px;
+    }
+
+    .qfr-trending-grid {
+        gap: 12px;
+    }
+
+    .qfr-trending-card {
+        min-height: 410px;
+    }
+
+    .qfr-newsletter-container {
+        width: min(100% - 48px, 900px);
+        padding: 50px;
+        gap: 45px;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .qfr-home-hero {
+        min-height: calc(100svh - 64px);
+    }
+
+    .qfr-home-hero-background img {
+        object-position: 58% center;
+        opacity: 0.34;
+    }
+
+    .qfr-home-hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 6, 10, 0.96),
+                rgba(3, 6, 10, 0.72)
+            ),
+            linear-gradient(
+                180deg,
+                rgba(3, 6, 10, 0.35),
+                rgba(3, 6, 10, 0.95)
+            );
+    }
+
+    .qfr-home-hero-content,
+    .qfr-section-container,
+    .qfr-frequency-line {
+        width: calc(100% - 32px);
+    }
+
+    .qfr-home-hero-content {
+        padding: 90px 0 100px;
+    }
+
+    .qfr-home-hero h1 {
+        font-size: clamp(43px, 13vw, 72px);
+        letter-spacing: -0.06em;
+    }
+
+    .qfr-home-hero-description {
+        margin-top: 25px;
+
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .qfr-home-hero-actions {
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .qfr-button {
+        width: 100%;
+    }
+
+    .qfr-home-hero-meta {
+        margin-top: 42px;
+    }
+
+    .qfr-home-hero-scroll {
+        display: none;
+    }
+
+
+    /* SECTION */
+
+    .qfr-section {
+        padding: 72px 0;
+    }
+
+    .qfr-section-heading {
+        margin-bottom: 35px;
+    }
+
+    .qfr-section-heading h2 {
+        font-size: 38px;
+    }
+
+    .qfr-section-heading p {
+        font-size: 13px;
+    }
+
+
+    /* PHILOSOPHY */
+
+    .qfr-philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qfr-philosophy-card {
+        min-height: 140px;
+        padding: 18px;
+    }
+
+    .philosophy-title {
+        font-size: 11px;
+    }
+
+    .philosophy-icon {
+        top: 17px;
+        right: 18px;
+    }
+
+    .qfr-philosophy-detail.open {
+        padding: 25px 48px 25px 22px;
+    }
+
+    .qfr-philosophy-detail p {
+        font-size: 12px;
+    }
+
+
+    /* LATEST */
+
+    .qfr-latest-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qfr-latest-card {
+        min-height: 110px;
+        padding: 17px;
+    }
+
+    .latest-card-label {
+        font-size: 10px;
+    }
+
+    .qfr-latest-display {
+        min-height: auto;
+    }
+
+    .latest-display-image,
+    .latest-display-image img {
+        min-height: 250px;
+    }
+
+    .latest-display-content {
+        padding: 32px 24px 38px;
+    }
+
+    .latest-display-content h3 {
+        font-size: 30px;
+    }
+
+    .latest-display-content p {
+        font-size: 13px;
+    }
+
+
+    /* TRENDING */
+
+    .qfr-trending-filter {
+        justify-content: flex-start;
+        margin-top: 0;
+    }
+
+    .qfr-trending-filter button {
+        min-width: 0;
+        flex: 1;
+        padding: 0 8px;
+    }
+
+    .qfr-trending-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .qfr-trending-card {
+        min-height: 390px;
+    }
+
+
+    /* NEWSLETTER */
+
+    .qfr-newsletter-section {
+        padding-top: 70px;
+        padding-bottom: 100px;
+    }
+
+    .qfr-newsletter-container {
+        width: calc(100% - 32px);
+
+        padding: 35px 24px;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .qfr-newsletter-copy h2 {
+        font-size: 32px;
+    }
+
+
+    /* FREQUENCY */
+
+    .qfr-frequency-line {
+        height: 28px;
+    }
+
+    .frequency-line-end {
+        width: 28px;
+        height: 28px;
+    }
+
+    .frequency-line-wave {
+        right: 34px;
+        width: 100px;
+    }
+
+    .qfr-frequency-line::before {
+        right: 30px;
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 420px) {
+
+    .qfr-home-hero-content,
+    .qfr-section-container,
+    .qfr-frequency-line {
+        width: calc(100% - 24px);
+    }
+
+    .qfr-philosophy-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .qfr-philosophy-card {
+        min-height: 125px;
+        padding: 15px;
+    }
+
+    .qfr-philosophy-card .philosophy-number {
+        font-size: 8px;
+    }
+
+    .philosophy-title {
+        max-width: 105px;
+        font-size: 9px;
+    }
+
+    .qfr-latest-card {
+        min-height: 100px;
+    }
+
+    .latest-card-number {
+        font-size: 8px;
+    }
+
+    .latest-card-label {
+        font-size: 9px;
+    }
+
+    .qfr-trending-card {
+        min-height: 350px;
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .frequency-line-wave span,
+    .qfr-home-hero-background img,
+    .latest-display-image img,
+    .trending-card-image img,
+    .qfr-button,
+    .qfr-philosophy-card,
+    .qfr-detail-close,
+    .qfr-trending-filter button {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
